@@ -1,0 +1,83 @@
+/*
+--- 01 TYPOGRAPHY
+
+  Font sizes (rem)
+    1 / 1.2 / 1.4 / 1.6 / 1.8
+  / 2 / 2.4 / 3 / 3.6 / 4.4
+  / 5.2 / 6.2 / 7.4 / 8.6 / 9.8
+
+  Font weights:
+    Default: 400
+    Medium: 500
+    Semi-bold: 600
+    Bold: 700
+
+  Line heights:
+    Default: 1
+    Small: 1.05
+    medium: 1.2
+    Paragraph default: 1.6
+
+  Letter spacing:
+    large bold: -0.5px
+    small uppercase: 0.75px
+
+--- 02 COLORS
+
+  Primary Color: 
+    #333
+
+  Tints:
+    #767676 (lightest grey allowed on #fff)
+
+  Accents:
+  
+
+
+--- 03 IMAGES
+
+
+--- 04 ICONS
+
+
+--- 05 SHADOWS
+
+
+--- 06 BORDER-RADIUS
+
+  Default: none
+  
+  
+--- 07 WHITESPACE
+
+  Spacing system(rem)
+    0.2 / 0.4 / 0.8 / 1.2 / 1.6
+  / 2.4 / 3.2 / 4.8 / 6.4 / 8
+  / 9.6 / 12.8
+
+
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #333;
+}
+
+.container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+    color: lightseagreen;
+}
