@@ -76,8 +76,11 @@ body {
   font-family: 'Urbanist', sans-serif;
   line-height: 1;
   font-weight: 400;
-  overflow: hidden;
   color: #111;
+}
+
+.body-index {
+  overflow: hidden;
 }
 
 a {
@@ -88,16 +91,16 @@ a {
 /******************************************************/
 /* PAGE TRANSITIONS */
 /******************************************************/
-.transition-scale {
+.transition-scale, .backdrop-btn{
   transition: 0.5s ease-in;
   opacity: 1;
 }
 
-html.is-animating .transition-scale {
+html.is-animating .transition-scale .backdrop-btn{
   opacity: 0;
 }
 
-html.is-leaving .transition-scale {
+html.is-leaving .transition-scale .backdrop-btn{
   opacity: 1;
   transform-origin: center;
   transform: scale(3);
@@ -114,11 +117,33 @@ html.is-leaving .transition-scale {
   background-color: #111;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .backdrop-img {
   max-width: 100%;
   max-height: 90vh;
+  z-index: 1;
+}
+
+.title-box {
+  display: flex;
+  position: absolute;
+  max-width: 40%;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.title-text {
+  font-size: 2.4rem;
+  color: #111;
+  letter-spacing: -0.15rem;
+  font-weight: 700;
+  line-height:2rem;
+  pointer-events: none;
+  
 }
 
 /******************************************************/
@@ -126,7 +151,6 @@ html.is-leaving .transition-scale {
 /******************************************************/
 .container-portfolio {
   display: flex;
-  padding: 3.2rem;
   width: 100vw;
   height: 100vh;
   background-color: #fff;
