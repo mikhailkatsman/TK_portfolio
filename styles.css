@@ -77,7 +77,12 @@ body {
   line-height: 1;
   font-weight: 400;
   overflow: hidden;
-  color: #fff;
+  color: #111;
+}
+
+a {
+  cursor: pointer;
+  -webkit-tap-highlight-color:  transparent; 
 }
 
 /******************************************************/
@@ -101,7 +106,7 @@ html.is-leaving .transition-scale {
 /******************************************************/
 /* INDEX */
 /******************************************************/
-.section-index {
+.container-index {
   display: flex;
   padding: 3.2rem;
   width: 100vw;
@@ -119,12 +124,12 @@ html.is-leaving .transition-scale {
 /******************************************************/
 /* PORTFOLIO */
 /******************************************************/
-.section-portfolio {
+.container-portfolio {
   display: flex;
   padding: 3.2rem;
   width: 100vw;
   height: 100vh;
-  background-color: #111;
+  background-color: #fff;
   justify-content: center;
   align-items: center;
 }
