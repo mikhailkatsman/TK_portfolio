@@ -89,21 +89,28 @@ a {
 }
 
 /******************************************************/
-/* PAGE TRANSITIONS */
+/* SWUP ANIMATIONS */
 /******************************************************/
-.transition-scale, .backdrop-btn{
-  transition: 0.5s ease-in;
+.transition-scale {
+  transition: 0.6s ease-in;
   opacity: 1;
 }
 
-html.is-animating .transition-scale .backdrop-btn{
+.transition-fade {
+  transition: 0.3s ease-in;
+  opacity: 1;
+}
+
+html.is-leaving .transition-scale {
+  transform: scale(3);
+}
+
+html.is-leaving .transition-fade {
   opacity: 0;
 }
 
-html.is-leaving .transition-scale .backdrop-btn{
-  opacity: 1;
-  transform-origin: center;
-  transform: scale(3);
+html.is-animating .transition-fade {
+  opacity: 0;
 }
 
 /******************************************************/
@@ -111,49 +118,68 @@ html.is-leaving .transition-scale .backdrop-btn{
 /******************************************************/
 .container-index {
   display: flex;
-  padding: 3.2rem;
   width: 100vw;
   height: 100vh;
+  padding: 3.2rem;
   background-color: #111;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.backdrop-img {
-  max-width: 100%;
-  max-height: 90vh;
+.backdrop {
   z-index: 1;
 }
 
+.backdrop-link,
+.backdrop-img {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
 .title-box {
-  display: flex;
   position: absolute;
-  max-width: 40%;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
+  width: 18rem;
+  height: 6rem;
   z-index: 2;
+
+  pointer-events: none;
 }
 
 .title-text {
   font-size: 2.4rem;
   color: #111;
   letter-spacing: -0.15rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height:2rem;
-  pointer-events: none;
-  
+}
+
+/******************************************************/
+/* HEADER */
+/******************************************************/
+.header {
+  display: flex;
+  /* We want fixed height for header because it is "sticky", for consistency */
+  height: 4.8rem;
+  padding: 0.6rem;
+
+  /* Push header content apart */
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+
+  position: relative;
 }
 
 /******************************************************/
 /* PORTFOLIO */
 /******************************************************/
 .container-portfolio {
-  display: flex;
   width: 100vw;
   height: 100vh;
+  padding: 0.6rem;
   background-color: #fff;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
