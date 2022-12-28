@@ -79,10 +79,6 @@ body {
   color: #111;
 }
 
-.body-index {
-  overflow: hidden;
-}
-
 a {
   cursor: pointer;
   -webkit-tap-highlight-color:  transparent; 
@@ -125,6 +121,8 @@ html.is-animating .transition-fade {
   justify-content: center;
   align-items: center;
   position: relative;
+
+  overflow: hidden;
 }
 
 .backdrop {
@@ -174,12 +172,22 @@ html.is-animating .transition-fade {
 /******************************************************/
 /* PORTFOLIO */
 /******************************************************/
-.container-portfolio {
-  width: 100vw;
-  height: 100vh;
-  padding: 0.6rem;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.portfolio-grid {
+  padding: .2rem;
+  margin: 0 auto;
+  columns: 2;
+  column-gap: .2rem;
+  max-width: 120rem;
+}
+
+.grid-item {
+  width: 100%;
+  margin-bottom: .1rem;
+  break-inside: avoid;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }

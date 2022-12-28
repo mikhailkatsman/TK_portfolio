@@ -6,6 +6,10 @@
   html.is-leaving .transition-scale{
     transform: scale(4);
   }
+
+  .portfolio-grid {
+    columns: 3;
+  }
 }
 
 /******************************************************/
@@ -15,6 +19,10 @@
 @media (min-width: 68rem) {
   html.is-leaving .transition-scale{
     transform: scale(5);
+  }
+
+  .portfolio-grid {
+    columns: 4;
   }
 }
 
