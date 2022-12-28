@@ -1,6 +1,7 @@
 const options = {
     containers: ["#backdrop"],
-    cache: false,
+    cache: true,
+    animateHistoryBrowsing: true
   };
 
 const swup = new Swup(options);
