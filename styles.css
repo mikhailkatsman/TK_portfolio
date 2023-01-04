@@ -86,6 +86,10 @@ a {
   -webkit-tap-highlight-color:  transparent; 
 }
 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 /******************************************************/
 /* SWUP ANIMATIONS */
 /******************************************************/
@@ -94,13 +98,13 @@ a {
   opacity: 1;
 }
 
+html.is-leaving .transition-backdrop {
+  transform: scale(3);
+}
+
 .transition-fade {
   transition: 0.3s ease-in;
   opacity: 1;
-}
-
-html.is-leaving .transition-backdrop {
-  transform: scale(3);
 }
 
 html.is-leaving .transition-fade {
@@ -110,6 +114,10 @@ html.is-leaving .transition-fade {
 html.is-animating .transition-fade {
   opacity: 0;
 }
+/* 
+html.is-animating .header {
+  opacity: 0;
+} */
 
 /******************************************************/
 /* INDEX */
@@ -164,12 +172,13 @@ html.is-animating .transition-fade {
   width: 100%;
   height: 100%;
   background: #111;
+  box-shadow: 0 0 20rem 20rem #111;
   bottom: 0;
   z-index: 9999;
   transform-origin: bottom;
   
   transform: scaleY(0);
-  animation: dropAnimation cubic-bezier(.44,.86,.2,.53) 1s;
+  animation: dropAnimation linear 1s;
 }
 
 @keyframes dropAnimation {
@@ -190,7 +199,7 @@ html.is-animating .transition-fade {
   height: 4.8rem;
   max-width: 114.4rem;
 
-  margin: 0 auto;
+  margin: 1.6rem auto;
   padding: 0 3.2rem;
 
   /* Push header content apart */
@@ -198,8 +207,10 @@ html.is-animating .transition-fade {
   align-items: center;
   background-color: transparent;
 
-
   position: relative;
+
+  /* transition: 0.3s ease-in;
+  opacity: 1; */
 }
 
 /******************************************************/
@@ -207,9 +218,9 @@ html.is-animating .transition-fade {
 /******************************************************/
 .portfolio-container {
   max-width: 114.4rem;
-  margin: 3.2rem auto;
+  margin: 1.6rem auto;
+  padding: 0 3.2rem;
 }
-
 
 .portfolio-grid {
   position: relative;
@@ -237,9 +248,9 @@ html.is-animating .transition-fade {
 /******************************************************/
 
 .glry {
-  display: block;
   max-width: 114.4rem;
-  margin: 3.2rem auto;
+  margin: 1.6rem auto;
+  padding: 0 3.2rem;
   height: calc(100vh - 11.2rem);
 }
 

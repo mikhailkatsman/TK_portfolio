@@ -1,17 +1,14 @@
-const options = {
-    containers: [
-    "#index-main",
-    "#portfolio-glry"
-    ],
-};
+const swup = new Swup();
 
-const swup = new Swup(options);
+init();
 
 document.addEventListener('swup:contentReplaced', init);
 document.addEventListener('swup:willReplaceContent', unload);
 
 function init() {
     if (document.querySelector('.portfolio-grid')) {
+        console.log('grid detected');
+
         const vw = Math.max(
             document.documentElement.clientWidth || 0, 
             window.innerWidth || 0
@@ -32,13 +29,18 @@ function init() {
             surroundingGutter: false
         });
 
-        masonry.layout();
+        console.log('masonry loaded!');
+    }
+
+    else {
+        console.log('no grid detected');
     }
 }
 
 function unload() {
     if (document.querySelector('.portfolio-grid')) {
         masonry.destroy();
+        console.log('grid destroyed');
     }
 }
 
