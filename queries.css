@@ -1,24 +1,10 @@
 /******************************************************/
-/* 592px WV */
-/******************************************************/
-
-@media (min-width: 37rem) {
-  .glry-controls label {
-    align-items: center;
-  }
-}
-
-/******************************************************/
 /* 800px WV */
 /******************************************************/
 
 @media (min-width: 50rem) {
-  html.is-leaving .transition-scale{
+  html.is-leaving .transition-backdrop{
     transform: scale(4);
-  }
-
-  .portfolio-grid {
-    columns: 3;
   }
 }
 
@@ -27,12 +13,8 @@
 /******************************************************/
 
 @media (min-width: 68rem) {
-  html.is-leaving .transition-scale{
+  html.is-leaving .transition-backdrop{
     transform: scale(5);
-  }
-
-  .portfolio-grid {
-    columns: 4;
   }
 }
 
@@ -41,7 +23,7 @@
 /******************************************************/
 
 @media (min-width: 84rem) {
-  html.is-leaving .transition-scale{
+  html.is-leaving .transition-backdrop{
     transform: scale(6);
   }
 }
