@@ -3,7 +3,6 @@ const swup = new Swup();
 init();
 
 document.addEventListener('swup:contentReplaced', init);
-document.addEventListener('swup:willReplaceContent', unload);
 
 function init() {
     if (document.querySelector('.portfolio-grid')) {
@@ -25,7 +24,7 @@ function init() {
         var masonry = new MiniMasonry({
             container: '.portfolio-grid',
             baseWidth: itemWidth,
-            gutter: 4,
+            gutter: 3,
             surroundingGutter: false
         });
 
@@ -34,13 +33,6 @@ function init() {
 
     else {
         console.log('no grid detected');
-    }
-}
-
-function unload() {
-    if (document.querySelector('.portfolio-grid')) {
-        masonry.destroy();
-        console.log('grid destroyed');
     }
 }
 
