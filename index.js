@@ -8,15 +8,6 @@ function init() {
     if (document.querySelector('.portfolio-grid')) {
         console.log('grid detected');
 
-        //load imgs
-        for (let i = 1; i <= 32; i++) {
-            let imgPath = `img/grid-img/${i}.webp`;
-            let gridItem = document.getElementById(`grid-item-${i}`);
-            gridItem.style.setProperty('background-image', `url(${imgPath})`);
-        }
-
-        console.log('imgs loaded')
-
         // calculate viewport width 
         // for grid element positions
         const vw = Math.max(
@@ -28,7 +19,7 @@ function init() {
 
         function calcWidth(vw) {
             if (vw < 600) {
-                return 150;
+                return 130;
             } else return 300;
         }
 
@@ -43,6 +34,24 @@ function init() {
         });
 
         console.log('masonry loaded!');
+
+        //load imgs
+        for (let i = 1; i <= 32; i++) {
+            let imgPath = `img/grid-img/${i}.webp`;
+            let gridItem = document.getElementById(`grid-item-${i}`);
+            let itemSpan = document.getElementById(`item-span-${i}`);
+
+            let preloaderImg = document.createElement('img');
+            preloaderImg.src = imgPath;
+            
+            preloaderImg.addEventListener('load', function() {
+                gridItem.style.setProperty('background-image', `url(${imgPath})`);
+                itemSpan.style.setProperty('opacity', '0');
+                preloaderImg = null;
+            });
+        }
+
+        console.log('imgs loaded')
     }
 
     else {

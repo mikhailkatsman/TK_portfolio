@@ -52,10 +52,6 @@ html.is-leaving .transition-fade {
 html.is-animating .transition-fade {
   opacity: 0;
 }
-/* 
-html.is-animating .header {
-  opacity: 0;
-} */
 
 /******************************************************/
 /* INDEX */
@@ -99,7 +95,7 @@ html.is-animating .header {
   color: #111;
   letter-spacing: -0.15rem;
   font-weight: 900;
-  line-height:2rem;
+  line-height: 2rem;
 
   text-transform: uppercase;
   
@@ -168,11 +164,11 @@ html.is-animating .header {
   position: absolute;
   background-size: contain;
 
-  transition: all 0.3s;
+  transition: opacity 0.3s linear;
 }
 
 .grid-item:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 span {
@@ -181,8 +177,11 @@ span {
   height:100%;
   top:0;
   left: 0;
+  background-color: #eee;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 
-  z-index: 1;
+  z-index: 9999;
 }
 
 /******************************************************/
@@ -222,7 +221,7 @@ ul.slides input {
   height: 100%;
   margin-bottom: 9.6rem;
   opacity: 0;
-  transition: all .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
 } 
 
 .slide-image img {
@@ -248,7 +247,7 @@ ul.slides input {
   z-index: 9999;
 
   opacity: 0.3;
-  transition: all 0.3s;
+  transition: opacity 0.3s;
 }
 
 .glry-controls label:hover {
@@ -290,7 +289,7 @@ ul.slides input {
 
 input:checked + .slide-container .slide-image {
   opacity: 1;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 input:checked + .slide-container .glry-controls label {
