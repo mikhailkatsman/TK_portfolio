@@ -66,26 +66,12 @@ function init() {
     }
 }
 
-function manipulateHeader() {
-    const headerElement = document.getElementById('header');
-    const headerStyle = getComputedStyle(headerElement);
-
-    // Display header if it is currently hidden
-    if (!(window.location.pathname.includes('/index.html') 
-    || window.location.pathname === '/')) {
-        if (headerStyle.display == 'none') {
-            headerElement.style.display = 'flex';
-            headerElement.style.opacity = '1';
-            console.log('Header revealed');
-        }
-    } 
-
-    // Hide header if /index.html mounts
-    else {
-        if (headerStyle.display == 'flex') {
-            headerElement.style.display = 'none';
-            headerElement.style.opacity = '0';
-            console.log('Header hidden');
-        } 
-    }    
+// Show header if page is not /index.html
+function manipulateHeader () {
+    document.getElementById('header')
+        .classList.toggle(
+            'header--active', 
+            !(window.location.pathname.includes('/index.html') 
+            || window.location.pathname === '/')
+    );
 }
