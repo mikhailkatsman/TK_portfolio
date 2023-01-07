@@ -1,31 +1,18 @@
 // Initialize Swup and listen to page transition events
 const swup = new Swup();
 console.log('Swup initialized');
+console.log(window.location.pathname);
 
 // Run init once on page load
 init();
+manipulateHeader();
 
 // Run init when swup transition occurs, to detect for grids
 document.addEventListener('swup:contentReplaced', init);
+document.addEventListener('swup:animationInStart', manipulateHeader);
+document.addEventListener('swup:popState', manipulateHeader);
 
 function init() {
-    // Display header if it is currently hidden
-    const headerElement = document.getElementById('header');
-    const headerStyle = getComputedStyle(headerElement);
-    if (window.location.pathname != '/index.html') {
-        if (headerStyle.display == 'none') {
-            headerElement.style.display = 'flex';
-            console.log('Header revealed');
-        }
-    } 
-    // Hide header if /index.html mounts
-    else {
-        if (headerStyle.display == 'flex') {
-            headerElement.style.display = 'none';
-            console.log('Header hidden');
-        } 
-    }
-
     if (window.location.pathname == '/portfolio.html') {
         console.log('portfolio page detected');
 
@@ -77,4 +64,28 @@ function init() {
     else {
         console.log('no grid detected');
     }
+}
+
+function manipulateHeader() {
+    const headerElement = document.getElementById('header');
+    const headerStyle = getComputedStyle(headerElement);
+
+    // Display header if it is currently hidden
+    if (!(window.location.pathname.includes('/index.html') 
+    || window.location.pathname === '/')) {
+        if (headerStyle.display == 'none') {
+            headerElement.style.display = 'flex';
+            headerElement.style.opacity = '1';
+            console.log('Header revealed');
+        }
+    } 
+
+    // Hide header if /index.html mounts
+    else {
+        if (headerStyle.display == 'flex') {
+            headerElement.style.display = 'none';
+            headerElement.style.opacity = '0';
+            console.log('Header hidden');
+        } 
+    }    
 }

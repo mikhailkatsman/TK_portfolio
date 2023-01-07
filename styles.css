@@ -109,7 +109,6 @@ html.is-animating .transition-fade {
   /* Fixed height for header because it is "sticky", for consistency */
   /* default height 6.4rem */
   height: 6.4rem;
-  width: 100%;
   max-width: 114.4rem;
   top: 0;
   left: 0;
@@ -129,7 +128,8 @@ html.is-animating .transition-fade {
   position: fixed;
   z-index: 9999;
 
-  transition: all 0.3s ease-in;
+  opacity: 0;
+  transition: opacity 0.6s;
   
 }
 
