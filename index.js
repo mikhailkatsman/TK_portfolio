@@ -27,7 +27,7 @@ function init() {
 
         function calcWidth(vw) {
             if (vw < 600) {
-                return 130;
+                return 90;
             } else return 300;
         }
 
