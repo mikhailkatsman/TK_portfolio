@@ -233,9 +233,9 @@ span {
 
 .glry-container {
   max-width: 114.4rem;
+  height: calc(100vh - env(safe-area-inset-bottom));
   margin: 0 auto;
-  padding: 6.4rem 3.2rem;
-  height: 100vh;
+  padding: 6.4rem 3.2rem 3.2rem;
 
   box-sizing: border-box;
 }
