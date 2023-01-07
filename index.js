@@ -1,12 +1,33 @@
+// Initialize Swup and listen to page transition events
 const swup = new Swup();
+console.log('Swup initialized');
 
+// Run init once on page load
 init();
 
+// Run init when swup transition occurs, to detect for grids
 document.addEventListener('swup:contentReplaced', init);
 
 function init() {
-    if (document.querySelector('.portfolio-grid')) {
-        console.log('grid detected');
+    // Display header if it is currently hidden
+    const headerElement = document.getElementById('header');
+    const headerStyle = getComputedStyle(headerElement);
+    if (window.location.pathname != '/index.html') {
+        if (headerStyle.display == 'none') {
+            headerElement.style.display = 'flex';
+            console.log('Header revealed');
+        }
+    } 
+    // Hide header if /index.html mounts
+    else {
+        if (headerStyle.display == 'flex') {
+            headerElement.style.display = 'none';
+            console.log('Header hidden');
+        } 
+    }
+
+    if (window.location.pathname == '/portfolio.html') {
+        console.log('portfolio page detected');
 
         // calculate viewport width 
         // for grid element positions
@@ -30,10 +51,9 @@ function init() {
             baseWidth: itemWidth,
             gutter: 3,
             surroundingGutter: false,
-            wedge: false
         });
 
-        console.log('masonry loaded!');
+        console.log('masonry grid initialized');
 
         //load imgs
         for (let i = 1; i <= 32; i++) {
@@ -45,8 +65,8 @@ function init() {
             preloaderImg.src = imgPath;
             
             preloaderImg.addEventListener('load', function() {
-                gridItem.style.setProperty('background-image', `url(${imgPath})`);
-                itemSpan.style.setProperty('opacity', '0');
+                gridItem.style.backgroundImage = `url(${imgPath})`;
+                itemSpan.style.opacity = '0';
                 preloaderImg = null;
             });
         }
@@ -58,5 +78,3 @@ function init() {
         console.log('no grid detected');
     }
 }
-
-

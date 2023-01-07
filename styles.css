@@ -32,7 +32,7 @@ a {
 /* SWUP ANIMATIONS */
 /******************************************************/
 .transition-backdrop {
-  transition: 0.6s ease-in;
+  transition: 0.4s ease-in;
   opacity: 1;
 }
 
@@ -41,7 +41,7 @@ html.is-leaving .transition-backdrop {
 }
 
 .transition-fade {
-  transition: 0.3s ease-in;
+  transition: 0.2s ease-in;
   opacity: 1;
 }
 
@@ -56,7 +56,7 @@ html.is-animating .transition-fade {
 /******************************************************/
 /* INDEX */
 /******************************************************/
-.container-index {
+.index-container {
   display: flex;
   height: 100vh;
   width: auto;
@@ -101,50 +101,47 @@ html.is-animating .transition-fade {
   
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #111;
-  box-shadow: 0 0 20rem 20rem #111;
-  bottom: 0;
-  z-index: 9999;
-  transform-origin: bottom;
-  
-  transform: scaleY(0);
-  animation: dropAnimation linear 1s;
-}
-
-@keyframes dropAnimation {
-  0% {
-    transform: scaleY(1);
-  }
-  100% {
-    transform: scaleY(0);
-  }
-}
-
 /******************************************************/
 /* HEADER */
 /******************************************************/
 .header {
-  display: flex;
+  display: none;
   /* Fixed height for header because it is "sticky", for consistency */
-  height: 4.8rem;
+  /* default height 6.4rem */
+  height: 6.4rem;
+  width: 100%;
   max-width: 114.4rem;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  margin: 1.6rem auto;
+  margin: 0 auto;
   padding: 0 3.2rem;
 
   /* Push header content apart */
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
 
-  position: relative;
+  /* Blur background objects */
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
 
-  /* transition: 0.3s ease-in;
-  opacity: 1; */
+  position: fixed;
+  z-index: 9999;
+
+  transition: all 0.3s ease-in;
+  
+}
+
+/* Constant header logo */
+.header > a > p {
+  font-size: 1.6rem;
+  color: #111;
+  letter-spacing: -0.15rem;
+  font-weight: 900;
+  line-height: 2rem;
+
+  text-transform: uppercase;
 }
 
 /******************************************************/
@@ -152,7 +149,7 @@ html.is-animating .transition-fade {
 /******************************************************/
 .portfolio-container {
   max-width: 114.4rem;
-  margin: 1.6rem auto;
+  margin: 6.4rem auto;
   padding: 0 3.2rem;
 }
 
@@ -188,17 +185,19 @@ span {
 /* GALLERY */
 /******************************************************/
 
-.glry {
+.glry-container {
   max-width: 114.4rem;
-  margin: 1.6rem auto;
-  padding: 0 3.2rem;
-  height: calc(100vh - 11.2rem);
+  margin: 0 auto;
+  padding: 6.4rem 3.2rem;
+  height: 100vh;
+
+  box-sizing: border-box;
 }
 
 ul.slides {
   display: block;
   position: relative;
-  height: inherit;
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -209,25 +208,26 @@ ul.slides input {
   display: none; 
 }
 
-.slide-container { 
-  display: block; 
-}
-
 .slide-image {
   display: block;
   position: absolute;
   top: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  margin-bottom: 9.6rem;
   opacity: 0;
-  transition: opacity .5s ease-in-out;
+  text-align: center;
+  margin-bottom: 4.8rem;
+
+  transition: opacity 0.5s ease-in-out;
+
+  box-sizing: border-box;
 } 
 
 .slide-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: inline-block;
 }
 
 .glry-controls {
