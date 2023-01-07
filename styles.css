@@ -124,6 +124,7 @@ html.is-animating .transition-fade {
   /* Blur background objects */
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   position: fixed;
   z-index: 9999;
