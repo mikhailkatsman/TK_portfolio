@@ -1,5 +1,78 @@
 /******************************************************/
-/* 800px WV */
+/* MAX 416px WV NAV BUTTON*/
+/******************************************************/
+
+@media (max-width: 26rem) {
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  .nav {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px) grayscale(100%);
+    top: 6.4rem;
+    left: 0;
+    right: 0;
+    height: 6.4rem;
+    padding: 0 2.8rem;
+
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease-in;
+
+    transform: translateY(-100%);
+
+    /* Hide nav by default */
+    /* 1. Hide visually */
+    opacity: 0;
+    /* 2. Make unaccessible to mouce and keyboard */
+    pointer-events: none;
+    /* 3. Hide from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .nav {
+    /* Show nav */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-open .icon-mobile-nav[alt="close-sharp"] {
+    opacity: 1;
+  }
+
+  .nav-open .icon-mobile-nav[alt="menu-sharp"] {
+    opacity: 0;
+  }
+
+  .nav-link:link,
+  .nav-link:visited {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .nav-list {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .instagram-logo {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+/******************************************************/
+/* MIN 800px WV */
 /******************************************************/
 
 @media (min-width: 50rem) {
@@ -9,7 +82,7 @@
 }
 
 /******************************************************/
-/* 1088px WV */
+/* MIN 1088px WV */
 /******************************************************/
 
 @media (min-width: 68rem) {
@@ -19,7 +92,7 @@
 }
 
 /******************************************************/
-/* 1344px WV */
+/* MIN 1344px WV */
 /******************************************************/
 
 @media (min-width: 84rem) {

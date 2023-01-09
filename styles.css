@@ -98,6 +98,7 @@ html.is-animating .transition-fade {
   line-height: 2rem;
 
   text-transform: uppercase;
+  white-space: pre-line;
   
 }
 
@@ -113,9 +114,11 @@ html.is-animating .transition-fade {
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: 3px solid;
+  border-color: #fff;
 
   margin: 0 auto;
-  padding: 0 3.2rem;
+  padding: 0 2.8rem;
 
   /* Push header content apart */
   justify-content: space-between;
@@ -123,14 +126,14 @@ html.is-animating .transition-fade {
 
   /* Blur background objects */
   background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px) grayscale(100%);
+  -webkit-backdrop-filter: blur(6px) grayscale(100%);
 
   position: fixed;
   z-index: 9999;
 
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: opacity 0s;
 
   pointer-events: none;
   
@@ -139,18 +142,31 @@ html.is-animating .transition-fade {
 .header--active{
   opacity: 1;
   pointer-events: all;
+  transition: opacity 0.4s;
 }
 
 /* Constant header logo */
-.header > a > p {
+.header-logo-link:link,
+.header-logo-link:visited {
   display: inline-block;
-  font-size: 1.8rem;
+  text-decoration: none;
+  width: min-content;
+  font-size: 2.4rem;
   color: #111;
   letter-spacing: -0.15rem;
   font-weight: 900;
-  line-height: 1.6rem;
+  line-height: 2rem;
 
   text-transform: uppercase;
+  white-space: pre-line;
+
+  transition: opacity 0.2s;
+  opacity: 1;
+}
+
+.header-logo-link:hover,
+.header-logo-link:active {
+  opacity: 0.8;
 }
 
 /******************************************************/
@@ -170,19 +186,20 @@ html.is-animating .transition-fade {
   display: inline-block;
   text-decoration: none;
   color: #111;
-  font-weight: 500;
-  font-size: 1.4rem;
+  font-weight: 600;
+  font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: -0.05rem;
 
-  transition: all 0.3s;
+  transition: opacity 0.2s;
+  opacity: 1;
 }
 
 .nav-link:hover,
 .nav-link:active,
 .instagram-logo:hover,
 .instagram-logo:active {
-  color: #555;
+  opacity: 0.8;
 }
 
 .instagram-logo {
@@ -190,13 +207,38 @@ html.is-animating .transition-fade {
   height: 1.6rem;
 }
 
+/* MOBILE BTN */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  position: absolute;
+  right: 2.8rem;
+  top: 2rem;
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #111;
+
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.icon-mobile-nav[alt="close-sharp"] {
+  opacity: 0;
+}
+
 /******************************************************/
 /* PORTFOLIO */
 /******************************************************/
 .portfolio-container {
   max-width: 114.4rem;
-  margin: 6.4rem auto;
-  padding: 0 3.2rem;
+  margin: 7.2rem auto;
+  padding: 0 2.8rem;
 }
 
 .portfolio-grid {
@@ -207,7 +249,7 @@ html.is-animating .transition-fade {
   position: absolute;
   background-size: contain;
 
-  transition: opacity 0.3s linear;
+  transition: opacity 0.2s linear;
 }
 
 .grid-item:hover {
@@ -235,7 +277,7 @@ span {
   max-width: 114.4rem;
   height: 100vh;
   margin: 0 auto;
-  padding: 6.4rem 3.2rem calc(3.2rem + env(safe-area-inset-bottom));
+  padding: 7.2rem 2.8rem calc(2.8rem + env(safe-area-inset-bottom));
 
   box-sizing: border-box;
 }

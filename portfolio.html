@@ -14,6 +14,9 @@
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="stylesheet" href="queries.css" />
 
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 		<script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
 		<script defer src="https://unpkg.com/minimasonry@latest/build/minimasonry.min.js"></script>
 		<script defer src="index.js"></script>
@@ -22,9 +25,7 @@
 	</head>
 	<body>
 		<header id="header" class="header">
-			<a href="/portfolio.html">
-				<p>Tomila Katsman</p>
-			</a>
+			<a class="header-logo-link" href="/portfolio.html">Tomila Katsman</a>
 			<nav class="nav">
 				<ul class="nav-list">
 					<li><a class="nav-link" href="/about.html">About</a></li>
@@ -36,6 +37,11 @@
 					</li>
 				</ul>
 			</nav>
+
+			<button class="btn-mobile-nav">
+				<img src="img/menu-sharp.svg" class="icon-mobile-nav" alt="menu-sharp" />
+				<img src="img/close-sharp.svg" class="icon-mobile-nav" alt="close-sharp" />
+			</button>
 		</header>
 		<main id="swup" class="transition-fade">
 			<div class="portfolio-container">
