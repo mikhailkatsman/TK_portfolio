@@ -121,7 +121,7 @@ html.is-animating .transition-fade {
   padding: 0 2.8rem;
 
   /* Push header content apart */
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
 
   /* Blur background objects */
@@ -136,10 +136,13 @@ html.is-animating .transition-fade {
   transition: opacity 0s;
 
   pointer-events: none;
-  
 }
 
-.header--active{
+.header--tall {
+  height: 12.8rem;
+}
+
+.header--active {
   opacity: 1;
   pointer-events: all;
   transition: opacity 0.4s;
@@ -148,6 +151,9 @@ html.is-animating .transition-fade {
 /* Constant header logo */
 .header-logo-link:link,
 .header-logo-link:visited {
+  position: absolute;
+  top: 1.2rem;
+  left: 2.8rem;
   display: inline-block;
   text-decoration: none;
   width: min-content;
@@ -367,7 +373,7 @@ ul.slides input {
 }
 
 .glry-dots .glry-dot {
-  width: 0.2rem;
+  width: 0.3rem;
   height: 1.2rem;
   background-color: #111;
   opacity: 0.3;

@@ -90,4 +90,5 @@ const headerElement = document.querySelector(".header");
 
 btnNavElement.addEventListener("click", function () {
   headerElement.classList.toggle("nav-open");
+  headerElement.classList.toggle("header--tall");
 });
