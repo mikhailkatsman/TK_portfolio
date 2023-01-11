@@ -66,12 +66,14 @@ function calcItemWidth() {
 
 // Load image data into the grid
 function loadGridImgs() {
+    let extRegex = /\.(webp|mp4)$/i;
+
     for (let i = 1; i <= 32; i++) { // 32 is hardcoded, would prefer to read length of directory
         let gridItem = document.getElementById(`grid-item-${i}`);
         let itemSpan = document.getElementById(`item-span-${i}`);
 
         let preloaderImg = new Image();
-        preloaderImg.src = `assets/projects/${i}/${i}.webp`;
+        preloaderImg.src = `assets/projects/${i}/1.webp`;
         
         preloaderImg.addEventListener('load', function() {
             gridItem.style.backgroundImage = `url(${preloaderImg.src})`;

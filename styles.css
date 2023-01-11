@@ -166,13 +166,25 @@ html.is-animating .transition-fade {
   text-transform: uppercase;
   white-space: pre-line;
 
-  transition: opacity 0.2s;
-  opacity: 1;
+  box-sizing: border-box;
 }
 
-.header-logo-link:hover,
-.header-logo-link:active {
-  opacity: 0.8;
+.header-logo-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  top: 100%;
+  transform: translateX(-50%) scaleX(0);
+  background-color: #111;
+  transition: all 0.2s ease-out;
+}
+
+.header-logo-link:hover::after,
+.header-logo-link:active::after {
+  width: 100%;
+  transform: translateX(-50%) scaleX(1);
 }
 
 /******************************************************/
@@ -189,6 +201,7 @@ html.is-animating .transition-fade {
 .nav-link:visited,
 .instagram-logo:link,
 .instagram-logo:visited {
+  position: relative;
   display: inline-block;
   text-decoration: none;
   color: #111;
@@ -197,15 +210,28 @@ html.is-animating .transition-fade {
   text-transform: uppercase;
   letter-spacing: -0.05rem;
 
-  transition: opacity 0.2s;
-  opacity: 1;
+  box-sizing: border-box;
 }
 
-.nav-link:hover,
-.nav-link:active,
-.instagram-logo:hover,
-.instagram-logo:active {
-  opacity: 0.8;
+.nav-link::after,
+.instagram-logo::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  top: 100%;
+  transform: translateX(-50%) scaleX(0);
+  background-color: #111;
+  transition: all 0.2s ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link:active::after,
+.instagram-logo:hover::after,
+.instagram-logo:active::after {
+  width: 100%;
+  transform: translateX(-50%) scaleX(1);
 }
 
 .instagram-logo {

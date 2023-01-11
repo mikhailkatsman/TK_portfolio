@@ -1,5 +1,10 @@
 const fs = require('fs/promises')
 
+getData().then(async function(data) {
+    buildShootsTemplates(data);
+    // buildGridTemplate(data);
+});
+
 // Reads a specified directory and creates an array of objects
 async function getData () {
     let shoots = await fs.readdir(
@@ -42,8 +47,7 @@ async function getData () {
     return data;
 }
 
-getData().then(async function (data) {
-
+async function buildShootsTemplates(data) {
     let shootsDir = `${__dirname}/templates/shoots`;
 
     // Creates a folder if one doesn't exist at specified path
@@ -93,7 +97,6 @@ getData().then(async function (data) {
                             </li>
                         </ul>
                     </nav>
-
                     <button class="btn-mobile-nav">
                         <img src="../../assets/svg/menu-sharp.svg" class="icon-mobile-nav" alt="menu-sharp" />
                         <img src="../../assets/svg/close-sharp.svg" class="icon-mobile-nav" alt="close-sharp" />
@@ -149,7 +152,8 @@ getData().then(async function (data) {
             }
         )
     }
-})
+}
+
 
 
 // // separate file
