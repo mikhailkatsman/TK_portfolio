@@ -27,14 +27,13 @@ function initMasonry() {
     loadGridImgs();
 }
 
-// Show header if page is not '/index.html'
-// And hide header if page is '/index.html' or '/'
+// Show header if page has no .index-container present
 function manipulateHeader() {
-    document.getElementById('header')
+    document
+        .getElementById('header')
         .classList.toggle(
             'header--active', 
-            !(window.location.pathname.includes('/index.html') 
-            || window.location.pathname === '/')
+            !(document.querySelector('.index-container'))
     );
 }
 
