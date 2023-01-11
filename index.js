@@ -66,16 +66,15 @@ function calcItemWidth() {
 
 // Load image data into the grid
 function loadGridImgs() {
-    for (let i = 1; i <= 32; i++) {
-        let imgPath = `img/grid-img/${i}.webp`;
+    for (let i = 1; i <= 32; i++) { // 32 is hardcoded, would prefer to read length of directory
         let gridItem = document.getElementById(`grid-item-${i}`);
         let itemSpan = document.getElementById(`item-span-${i}`);
 
-        let preloaderImg = document.createElement('img');
-        preloaderImg.src = imgPath;
+        let preloaderImg = new Image();
+        preloaderImg.src = `assets/projects/${i}/${i}.webp`;
         
         preloaderImg.addEventListener('load', function() {
-            gridItem.style.backgroundImage = `url(${imgPath})`;
+            gridItem.style.backgroundImage = `url(${preloaderImg.src})`;
             itemSpan.style.opacity = '0';
             preloaderImg = null;
         });
@@ -89,6 +88,6 @@ const btnNavElement = document.querySelector(".btn-mobile-nav");
 const headerElement = document.querySelector(".header");
 
 btnNavElement.addEventListener("click", function () {
-  headerElement.classList.toggle("nav-open");
-  headerElement.classList.toggle("header--tall");
+    headerElement.classList.toggle("nav-open");
+    headerElement.classList.toggle("header--tall");
 });
