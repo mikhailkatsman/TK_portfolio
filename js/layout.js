@@ -1,4 +1,5 @@
-
+// Master HTML layout
+let layout = `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,36 +44,8 @@
                 <img src="../../assets/svg/close-sharp.svg" class="icon-mobile-nav" alt="close-sharp" />
             </button>
         </header>
-        <main id="swup" class="transition-fade">
-            <div class="glry-container">
-                <ul class="slides">
-                    
-                    <input 
-                        type="radio" 
-                        name="radio-buttons"
-                        id="img-1" checked
-                    />
-                    <li class="slide-container">
-                        <div class="slide-image">
-                            <img src="/assets/projects/14/1.webp"/>
-                        </div>
-                        <div class="glry-controls">
-                            <label for="img-1" class="prev-slide">
-                                <img src="../../assets/svg/chevron-back-sharp.svg" alt="back-arrow">
-                            </label>
-                            <label for="img-1" class="next-slide">
-                                <img src="../../assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
-                            </label>
-                        </div>
-                    </li>
-                    
-                    <div class="glry-dots">
-                        
-                            <label for="img-1" class="glry-dot" id="img-dot-1"></label>
-                            
-                    </div>
-                </ul>
-            </div>
-        </main>
-        </body>
+    </body>
 </html>
+`;
+
+module.exports = layout;

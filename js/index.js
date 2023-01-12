@@ -33,7 +33,8 @@ function manipulateHeader() {
         .getElementById('header')
         .classList.toggle(
             'header--active', 
-            !(document.querySelector('.index-container'))
+            !(window.location.pathname.includes('/index.html') 
+            || window.location.pathname === '/')
     );
 }
 
@@ -72,7 +73,7 @@ function loadGridImgs() {
         let itemSpan = document.getElementById(`item-span-${i}`);
 
         let preloaderImg = new Image();
-        preloaderImg.src = `assets/projects/${i}/1.webp`;
+        preloaderImg.src = `../assets/projects/${i}/1.webp`;
         
         preloaderImg.addEventListener('load', function() {
             gridItem.style.backgroundImage = `url(${preloaderImg.src})`;
