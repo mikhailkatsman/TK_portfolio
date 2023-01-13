@@ -86,10 +86,10 @@ async function buildShootsTemplates(data) {
                         </div>
                         <div class="glry-controls">
                             <label for="img-${(index + files.length - 1) % files.length + 1}" class="prev-slide">
-                                <img src="../../assets/svg/chevron-back-sharp.svg" alt="back-arrow">
+                                <img src="/assets/svg/chevron-back-sharp.svg" alt="back-arrow">
                             </label>
                             <label for="img-${(index + 1) % files.length + 1}" class="next-slide">
-                                <img src="../../assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
+                                <img src="/assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
                             </label>
                         </div>
                     </li>
