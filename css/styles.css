@@ -279,26 +279,33 @@ html.is-animating .transition-fade {
 
 .grid-item {
   position: absolute;
-  background-size: contain;
 
   transition: opacity 0.2s linear;
 }
 
 .grid-item:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-span {
-  position:absolute; 
-  width:100%;
-  height:100%;
-  top:0;
-  left: 0;
-  background-color: #eee;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-
+.grid-span {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  color: #eee;
   z-index: 9999;
+
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.grid-img {
+  width:100%;
+  height: auto;
+}
+
+.grid-video {
+  width:100%;
+  height: auto;
 }
 
 /******************************************************/

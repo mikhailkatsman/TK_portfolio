@@ -24,7 +24,7 @@ function initMasonry() {
 
     console.log('MiniMasonry initialized');
 
-    loadGridImgs();
+    // loadGridImgs();
 }
 
 // Show header if page has no .index-container present
@@ -64,26 +64,26 @@ function calcItemWidth() {
     return itemWidth;
 }
 
-// Load image data into the grid
-function loadGridImgs() {
-    let extRegex = /\.(webp|mp4)$/i;
+// // Load image data into the grid
+// function loadGridImgs() {
+//     let extRegex = /\.(webp|mp4)$/i;
 
-    for (let i = 1; i <= 32; i++) { // 32 is hardcoded, would prefer to read length of directory
-        let gridItem = document.getElementById(`grid-item-${i}`);
-        let itemSpan = document.getElementById(`item-span-${i}`);
+//     for (let i = 1; i <= 32; i++) { // 32 is hardcoded, would prefer to read length of directory
+//         let gridItem = document.getElementById(`grid-item-${i}`);
+//         let itemSpan = document.getElementById(`item-span-${i}`);
 
-        let preloaderImg = new Image();
-        preloaderImg.src = `../assets/grid-img/${i}.webp`;
+//         let preloaderImg = new Image();
+//         preloaderImg.src = `../assets/grid-img/${i}.webp`;
         
-        preloaderImg.addEventListener('load', function() {
-            gridItem.style.backgroundImage = `url(${preloaderImg.src})`;
-            itemSpan.style.opacity = '0';
-            preloaderImg = null;
-        });
-    }
+//         preloaderImg.addEventListener('load', function() {
+//             gridItem.style.backgroundImage = `url(${preloaderImg.src})`;
+//             itemSpan.style.opacity = '0';
+//             preloaderImg = null;
+//         });
+//     }
 
-    console.log('imgs loaded');
-}
+//     console.log('imgs loaded');
+// }
 
 // Nav Button operation
 const btnNavElement = document.querySelector(".btn-mobile-nav");

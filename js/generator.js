@@ -185,9 +185,19 @@ async function buildGridTemplate(data) {
             <div class="portfolio-container">
                 <div class="portfolio-grid">
                     ${firstFiles.map((file, index) => {
-                        return `
+                        if (path.extname(file) == '.mp4') {
+                            return `
                     <div id="grid-item-${index + 1}" class="grid-item" style="aspect-ratio: ${aspectRatios[index]};">
-                        <a href="/shoots/${index + 1}.html"><span id="item-span-${index + 1}"></span></a>
+                        <span class="grid-span"></span>
+                        <video class="grid-video" src="/assets/grid-img/${index + 1}.mp4" autoplay muted loop></video>
+                    </div>
+                    `;
+                        } else return `
+                    <div id="grid-item-${index + 1}" class="grid-item" style="aspect-ratio: ${aspectRatios[index]};">
+                        <a href="/shoots/${index + 1}.html">
+                            <span class="grid-span"></span>
+                            <img class="grid-img" src="/assets/grid-img/${index + 1}.webp" alt="Image ${index + 1}">
+                        </a>
                     </div>
                     `;
                     }).join('')}
