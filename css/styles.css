@@ -277,10 +277,19 @@ html.is-animating .transition-fade {
     position: relative;
 }
 
-.portfolio-grid__item {
+.gutter-sizer {
+    width: 0.3%;
+}
+
+.grid-sizer,
+.grid-item {
+    width: 33.1%;
+}
+
+.grid-item {
     float: left;
     display: block;
-    width: 33.333333%;
+    margin-bottom: 0.1%;
 }
 
 .grid-span {

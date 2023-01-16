@@ -16,7 +16,10 @@ function initMasonry () {
 
     console.log('portfolio grid detected')
     var msnry = new window.Masonry('.portfolio-grid', {
-        itemSelector: '.portfolio-grid__item',
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+        itemSelector: '.grid-item',
+        percentPosition: true,
     })
     console.log('MiniMasonry initialized')
 

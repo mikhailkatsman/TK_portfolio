@@ -158,6 +158,7 @@ async function buildGridTemplate (data) {
                     console.log(err)
                 })
         }
+        
         // For .mp4
         else {
             // Calculate video aspect ratio
@@ -183,17 +184,36 @@ async function buildGridTemplate (data) {
     }
 
     let projectsHtml = firstFiles.map((file, index) => {
-        return `<a href="/shoots/${index + 1}.html" class="portfolio-grid__item">`
+        return `<a href="/shoots/${index + 1}.html" class="grid-item">`
             + (path.extname(file) === '.mp4' ?
-                `<video class="grid-video" src="/assets/grid-img/${index + 1}.mp4" autoplay muted loop></video>` :
-                `<img class="grid-img" loading="lazy" src="/assets/grid-img/${index + 1}.webp" width="${aspectRatios[index].width}" height="${aspectRatios[index].height}" alt="Image ${index + 1}">`)
-            + '</a>'
+                    `
+                        <video class="grid-video" 
+                            width="${aspectRatios[index].width}"
+                            height="${aspectRatios[index].height}"
+                            autoplay muted loop playsinline>
+                            <source src="/assets/grid-img/${index + 1}.mp4" type="video/mp4">
+                        </video>
+                    ` :
+                    `
+                        <img 
+                            class="grid-img" 
+                            loading="lazy" 
+                            src="/assets/grid-img/${index + 1}.webp" 
+                            width="${aspectRatios[index].width}" 
+                            height="${aspectRatios[index].height}" 
+                            alt="Image ${index + 1}"
+                        >
+                    `)
+            +   `</a>
+                    `
     }).join('')
 
     let mainContent = `
         <main id="swup" class="transition-fade">
             <div class="portfolio-container">
                 <div class="portfolio-grid">
+                    <div class="grid-sizer"></div>
+                    <div class="gutter-sizer"></div>
                     ${projectsHtml}
                 </div>
             </div>
