@@ -1,5 +1,5 @@
 // Master HTML layout
-let layout = `
+const layout = `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,6 +46,6 @@ let layout = `
         </header>
     </body>
 </html>
-`;
+`
 
-module.exports = layout;
+module.exports = layout
