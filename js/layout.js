@@ -1,5 +1,5 @@
 // Master HTML layout
-let layout = `
+const layout = `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,7 +20,7 @@ let layout = `
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
         <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
-        <script defer src="https://unpkg.com/minimasonry@latest/build/minimasonry.min.js"></script>
+        <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script defer src="/js/index.js"></script>
 
         <title>Tomila Katsman</title>
@@ -46,6 +46,6 @@ let layout = `
         </header>
     </body>
 </html>
-`;
+`
 
-module.exports = layout;
+module.exports = layout

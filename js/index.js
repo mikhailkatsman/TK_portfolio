@@ -1,95 +1,73 @@
-// Initialize Swup and listen to transition events
-const swup = new Swup();
-document.addEventListener('swup:animationInStart', manipulateHeader);
-document.addEventListener('swup:popState', manipulateHeader);
-document.addEventListener('swup:contentReplaced', initMasonry);
-
-// Run functions once on page reload
-manipulateHeader();
-initMasonry();
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 
 // initialise Minimasonry plugin
-function initMasonry() {
-    if(!document.querySelector('.portfolio-grid')){
-        return;
+function initMasonry () {
+    if (!document.querySelector('.portfolio-grid')) {
+        return
     }
 
-    console.log('portfolio grid detected');
-    var masonry = new MiniMasonry({
-        container: '.portfolio-grid',
-        baseWidth: calcItemWidth(),
-        gutter: 3,
-        surroundingGutter: false,
-    });
+    console.log('portfolio grid detected')
+    const msnry = new Masonry('.portfolio-grid', {
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+        itemSelector: '.grid-item',
+        percentPosition: true
+    })
+    console.log('Masonry initialized')
 
-    console.log('MiniMasonry initialized');
-
-    // loadGridImgs();
+    displayGridData()
 }
 
 // Show header if page has no .index-container present
-function manipulateHeader() {
+function manipulateHeader () {
     document
         .getElementById('header')
         .classList.toggle(
-            'header--active', 
-            !(window.location.pathname.includes('/index.html') 
-            || window.location.pathname === '/')
-    );
+            'header--active',
+            !(window.location.pathname.includes('/index.html') ||
+            window.location.pathname === '/')
+        )
 }
 
-function calcItemWidth() {
-    // calculate viewport width 
-    const vw = Math.max(
-        document.documentElement.clientWidth || 0, 
-        window.innerWidth || 0
-    );
+// Enable smooth transition for loaded elements
+function displayGridData () {
+    const portfolioGrid = document.getElementById('portfolio-grid')
+    for (let i = 1; i <= portfolioGrid.children.length - 2; i++) {
+        const gridItem = document.getElementById(`grid-item-${i}`)
+        const gridSpan = document.getElementById(`grid-span-${i}`)
 
-    // calculate grid item width
-    let itemWidth;
-    switch (true) {
-        case vw < 430:
-            itemWidth = 90;
-            break;
-        case vw < 600:
-            itemWidth = 130;
-            break;
-        case vw < 900:
-            itemWidth = 200;
-            break;
-        default:
-            itemWidth = 300;
+        const media = gridItem.querySelector('img, video')
+        if (media.nodeName === 'IMG') {
+            media.addEventListener('load', function () {
+                gridSpan.style.backgroundColor = 'transparent'
+                console.log(`img ${i} loaded`)
+            })
+        }
+        else if (media.nodeName === 'VIDEO') {
+            media.addEventListener('play', function () {
+                gridSpan.style.backgroundColor = 'transparent'
+                console.log(`video ${i} loaded`)
+            })
+        }
     }
-
-    return itemWidth;
 }
-
-// // Load image data into the grid
-// function loadGridImgs() {
-//     let extRegex = /\.(webp|mp4)$/i;
-
-//     for (let i = 1; i <= 32; i++) { // 32 is hardcoded, would prefer to read length of directory
-//         let gridItem = document.getElementById(`grid-item-${i}`);
-//         let itemSpan = document.getElementById(`item-span-${i}`);
-
-//         let preloaderImg = new Image();
-//         preloaderImg.src = `../assets/grid-img/${i}.webp`;
-        
-//         preloaderImg.addEventListener('load', function() {
-//             gridItem.style.backgroundImage = `url(${preloaderImg.src})`;
-//             itemSpan.style.opacity = '0';
-//             preloaderImg = null;
-//         });
-//     }
-
-//     console.log('imgs loaded');
-// }
 
 // Nav Button operation
-const btnNavElement = document.querySelector(".btn-mobile-nav");
-const headerElement = document.querySelector(".header");
+const btnNavElement = document.querySelector('.btn-mobile-nav')
+const headerElement = document.querySelector('.header')
 
-btnNavElement.addEventListener("click", function () {
-    headerElement.classList.toggle("nav-open");
-    headerElement.classList.toggle("header--tall");
-});
+btnNavElement.addEventListener('click', function () {
+    headerElement.classList.toggle('nav-open')
+    headerElement.classList.toggle('header--tall')
+})
+
+// Initialize Swup and listen to transition events
+const swup = new Swup()
+document.addEventListener('swup:animationInStart', manipulateHeader)
+document.addEventListener('swup:popState', manipulateHeader)
+document.addEventListener('swup:contentReplaced', initMasonry)
+
+// Run functions once on page reload
+manipulateHeader()
+initMasonry()
