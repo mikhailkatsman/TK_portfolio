@@ -40,13 +40,13 @@ function displayGridData () {
         const media = gridItem.querySelector('img, video')
         if (media.nodeName === 'IMG') {
             media.addEventListener('load', function () {
-                gridSpan.style.backgroundColor = 'transparent'
+                gridSpan.classList.add("data-loaded")
                 console.log(`img ${i} loaded`)
             })
         }
         else if (media.nodeName === 'VIDEO') {
             media.addEventListener('play', function () {
-                gridSpan.style.backgroundColor = 'transparent'
+                gridSpan.classList.add("data-loaded")
                 console.log(`video ${i} loaded`)
             })
         }

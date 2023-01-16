@@ -2,9 +2,7 @@
   "dependencies": {
     "ffprobe": "^1.1.2",
     "ffprobe-static": "^3.1.0",
-    "minimasonry": "^1.3.1",
-    "sharp": "^0.31.3",
-    "swup": "^2.0.19"
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "eslint": "^8.32.0",

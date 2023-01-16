@@ -292,6 +292,7 @@ html.is-animating .transition-fade {
     margin-bottom: 0.1%;
 }
 
+
 .grid-link {
     opacity: 1;
     transition: opacity 0.2s;
@@ -307,9 +308,13 @@ html.is-animating .transition-fade {
     width: 100%;
     height: 100%;
     z-index: 1;
-
+    
     background-color: #eee;
     transition: background-color 0.4s;
+}
+
+.data-loaded {
+    background-color: transparent !important;
 }
 
 .grid-img,

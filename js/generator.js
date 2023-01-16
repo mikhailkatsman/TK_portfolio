@@ -181,7 +181,7 @@ async function buildGridTemplate (data) {
         }
     }
 
-    const projectsHtml = firstFiles.map((file, index) => {
+    const shootsHtml = firstFiles.map((file, index) => {
         return `<div id="grid-item-${index + 1}" class="grid-item">` +
             (path.extname(file) === '.mp4'
                 ? `     
@@ -219,7 +219,7 @@ async function buildGridTemplate (data) {
                 <div id="portfolio-grid" class="portfolio-grid">
                     <div class="grid-sizer"></div>
                     <div class="gutter-sizer"></div>
-                    ${projectsHtml}
+                    ${shootsHtml}
                 </div>
             </div>
         </main>
