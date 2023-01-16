@@ -8,304 +8,300 @@
 }
 
 html, body {
-  font-size: 62.5%;
+    font-size: 62.5%;
 
-  font-family: 'Urbanist', sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #111;
+    font-family: 'Urbanist', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #111;
 
-  touch-action: none;
-  touch-action: pan-y;
+    touch-action: none;
+    touch-action: pan-y;
 }
 
 a {
-  cursor: pointer;
-  -webkit-tap-highlight-color:  transparent; 
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
-::-webkit-scrollbar { 
-  display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 /******************************************************/
 /* SWUP ANIMATIONS */
 /******************************************************/
 .transition-backdrop {
-  transition: 0.4s ease-in;
-  opacity: 1;
+    transition: 0.4s ease-in;
+    opacity: 1;
 }
 
 html.is-leaving .transition-backdrop {
-  transform: scale(3);
+    transform: scale(3);
 }
 
 .transition-fade {
-  transition: 0.2s ease-in;
-  opacity: 1;
+    transition: 0.2s ease-in;
+    opacity: 1;
 }
 
 html.is-leaving .transition-fade {
-  opacity: 0;
+    opacity: 0;
 }
 
 html.is-animating .transition-fade {
-  opacity: 0;
+    opacity: 0;
 }
 
 /******************************************************/
 /* INDEX */
 /******************************************************/
 .index-container {
-  display: flex;
-  height: 100vh;
-  width: auto;
-  padding: 0 3.2rem;
-  background-color: #111;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+    display: flex;
+    height: 100vh;
+    width: auto;
+    padding: 0 3.2rem;
+    background-color: #111;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .backdrop {
-  z-index: 1;
+    z-index: 1;
 }
 
 .backdrop-link,
 .backdrop-img {
-  max-width: 100%;
-  max-height: 80vh;
+    max-width: 100%;
+    max-height: 80vh;
 }
 
 .title-box {
-  position: absolute;
-  width: 24rem;
-  height: 4rem;
-  z-index: 2;
+    position: absolute;
+    width: 24rem;
+    height: 4rem;
+    z-index: 2;
 
-  text-align: center;
+    text-align: center;
 
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .title-text {
-  font-size: 1.6rem;
-  color: #111;
-  letter-spacing: -0.15rem;
-  font-weight: 900;
-  line-height: 2rem;
+    font-size: 1.6rem;
+    color: #111;
+    letter-spacing: -0.15rem;
+    font-weight: 900;
+    line-height: 2rem;
 
-  text-transform: uppercase;
-  white-space: pre-line;
-  
+    text-transform: uppercase;
+    white-space: pre-line;
+
 }
 
 /******************************************************/
 /* HEADER */
 /******************************************************/
 .header {
-  display: flex;
-  /* Fixed height for header because it is "sticky", for consistency */
-  /* default height 6.4rem */
-  height: 6.4rem;
-  max-width: 114.4rem;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 3px solid;
-  border-color: #fff;
+    display: flex;
+    /* Fixed height for header because it is "sticky", for consistency */
+    /* default height 6.4rem */
+    height: 6.4rem;
+    max-width: 114.4rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid;
+    border-color: #fff;
 
-  margin: 0 auto;
-  padding: 0 2.8rem;
+    margin: 0 auto;
+    padding: 0 2.8rem;
 
-  /* Push header content apart */
-  justify-content: end;
-  align-items: center;
+    /* Push header content apart */
+    justify-content: end;
+    align-items: center;
 
-  /* Blur background objects */
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px) grayscale(100%);
-  -webkit-backdrop-filter: blur(6px) grayscale(100%);
+    /* Blur background objects */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px) grayscale(100%);
+    -webkit-backdrop-filter: blur(6px) grayscale(100%);
 
-  position: fixed;
-  z-index: 9999;
+    position: fixed;
+    z-index: 9999;
 
-  opacity: 0;
-  transition: opacity 0s;
+    opacity: 0;
+    transition: opacity 0s;
 
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .header--tall {
-  height: 12.8rem;
+    height: 12.8rem;
 }
 
 .header--active {
-  opacity: 1;
-  pointer-events: all;
-  transition: opacity 0.4s;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.4s;
 }
 
 /* Constant header logo */
 .header-logo-link:link,
 .header-logo-link:visited {
-  position: absolute;
-  top: 1.2rem;
-  left: 2.8rem;
-  display: inline-block;
-  text-decoration: none;
-  width: min-content;
-  font-size: 2.4rem;
-  color: #111;
-  letter-spacing: -0.15rem;
-  font-weight: 900;
-  line-height: 2rem;
+    position: absolute;
+    top: 1.2rem;
+    left: 2.8rem;
+    display: inline-block;
+    text-decoration: none;
+    width: min-content;
+    font-size: 2.4rem;
+    color: #111;
+    letter-spacing: -0.15rem;
+    font-weight: 900;
+    line-height: 2rem;
 
-  text-transform: uppercase;
-  white-space: pre-line;
+    text-transform: uppercase;
+    white-space: pre-line;
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .header-logo-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  top: 100%;
-  transform: translateX(-50%) scaleX(0);
-  background-color: #111;
-  transition: all 0.2s ease-out;
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    top: 100%;
+    transform: translateX(-50%) scaleX(0);
+    background-color: #111;
+    transition: all 0.2s ease-out;
 }
 
 .header-logo-link:hover::after,
 .header-logo-link:active::after {
-  width: 100%;
-  transform: translateX(-50%) scaleX(1);
+    width: 100%;
+    transform: translateX(-50%) scaleX(1);
 }
 
 /******************************************************/
 /* NAV */
 /******************************************************/
 .nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav-link:link,
 .nav-link:visited,
 .instagram-logo:link,
 .instagram-logo:visited {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  letter-spacing: -0.05rem;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .nav-link::after,
 .instagram-logo::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  top: 100%;
-  transform: translateX(-50%) scaleX(0);
-  background-color: #111;
-  transition: all 0.2s ease-out;
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    top: 100%;
+    transform: translateX(-50%) scaleX(0);
+    background-color: #111;
+    transition: all 0.2s ease-out;
 }
 
 .nav-link:hover::after,
 .nav-link:active::after,
 .instagram-logo:hover::after,
 .instagram-logo:active::after {
-  width: 100%;
-  transform: translateX(-50%) scaleX(1);
+    width: 100%;
+    transform: translateX(-50%) scaleX(1);
 }
 
 .instagram-logo {
-  width: 1.6rem;
-  height: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 /* MOBILE BTN */
 .btn-mobile-nav {
-  border: none;
-  background: none;
-  cursor: pointer;
+    border: none;
+    background: none;
+    cursor: pointer;
 
-  display: none;
+    display: none;
 }
 
 .icon-mobile-nav {
-  position: absolute;
-  right: 2.8rem;
-  top: 2rem;
-  height: 2.4rem;
-  width: 2.4rem;
-  color: #111;
+    position: absolute;
+    right: 2.8rem;
+    top: 2rem;
+    height: 2.4rem;
+    width: 2.4rem;
+    color: #111;
 
-  opacity: 1;
-  transition: opacity 0.2s;
+    opacity: 1;
+    transition: opacity 0.2s;
 }
 
 .icon-mobile-nav[alt="close-sharp"] {
-  opacity: 0;
+    opacity: 0;
 }
 
 /******************************************************/
 /* PORTFOLIO */
 /******************************************************/
 .portfolio-container {
-  max-width: 114.4rem;
-  margin: 7.2rem auto;
-  padding: 0 2.8rem;
+    max-width: 114.4rem;
+    margin: 7.2rem auto;
+    padding: 0 2.8rem;
 }
 
 .portfolio-grid {
-  position: relative;
+    position: relative;
 }
 
-.grid-item {
-  position: absolute;
-
-  transition: opacity 0.2s linear;
-}
-
-.grid-item:hover {
-  opacity: 0.8;
+.portfolio-grid__item {
+    float: left;
+    display: block;
+    width: 33.333333%;
 }
 
 .grid-span {
-  position: absolute; 
-  width: 100%;
-  height: 100%;
-  color: #eee;
-  z-index: 9999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #eee;
+    z-index: 9999;
 
-  opacity: 1;
-  transition: opacity 0.2s;
+    opacity: 1;
+    transition: opacity 0.2s;
 }
 
 .grid-img {
-  width:100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .grid-video {
-  width:100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 /******************************************************/
@@ -313,114 +309,114 @@ html.is-animating .transition-fade {
 /******************************************************/
 
 .glry-container {
-  max-width: 114.4rem;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 7.2rem 2.8rem calc(2.8rem + env(safe-area-inset-bottom));
+    max-width: 114.4rem;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 7.2rem 2.8rem calc(2.8rem + env(safe-area-inset-bottom));
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 ul.slides {
-  display: block;
-  position: relative;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  list-style: none;
+    display: block;
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
 }
 
 ul.slides input {
-  display: none; 
+    display: none;
 }
 
 .slide-image {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  opacity: 0;
-  text-align: center;
-  margin-bottom: 4.8rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    margin-bottom: 4.8rem;
 
-  transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 
-  box-sizing: border-box;
-} 
+    box-sizing: border-box;
+}
 
 .slide-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: inline-block;
 }
 
 .glry-controls {
-  display: flex;
-  position: absolute;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  color: #111;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    color: #111;
 }
 
 .glry-controls label {
-  display: none;
-  cursor: pointer;
-  align-items: flex-end;
-  width: 50%;
-  z-index: 9999;
+    display: none;
+    cursor: pointer;
+    align-items: flex-end;
+    width: 50%;
+    z-index: 9999;
 
-  opacity: 1;
-  transition: opacity 0.3s;
+    opacity: 1;
+    transition: opacity 0.3s;
 }
 
 .glry-controls label:hover {
-  opacity: 0.3;  
+    opacity: 0.3;
 }
 
 .glry-controls .prev-slide {
-  justify-content: left;
+    justify-content: left;
 }
 
 .glry-controls .next-slide {
-  justify-content: right;
+    justify-content: right;
 }
 
 .glry-controls img {
-  height: 2.2rem;
-  width: auto;
+    height: 2.2rem;
+    width: auto;
 }
 
 .glry-dots {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  gap: 1rem;
-  bottom: 0;
-  left: 40%;
-  right: 40%;
-  z-index: 9999;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 1rem;
+    bottom: 0;
+    left: 40%;
+    right: 40%;
+    z-index: 9999;
 }
 
 .glry-dots .glry-dot {
-  width: 0.3rem;
-  height: 1.2rem;
-  background-color: #111;
-  opacity: 0.3;
-  align-self: center;
+    width: 0.3rem;
+    height: 1.2rem;
+    background-color: #111;
+    opacity: 0.3;
+    align-self: center;
 
 }
 
 input:checked + .slide-container .slide-image {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 input:checked + .slide-container .glry-controls label {
-  display: flex; 
+    display: flex;
 }
 
 input#img-1:checked ~ .glry-dots label#img-dot-1,
@@ -428,6 +424,6 @@ input#img-2:checked ~ .glry-dots label#img-dot-2,
 input#img-3:checked ~ .glry-dots label#img-dot-3,
 input#img-4:checked ~ .glry-dots label#img-dot-4,
 input#img-5:checked ~ .glry-dots label#img-dot-5 {
-	opacity: 1;
-  height: 2rem;
+    opacity: 1;
+    height: 2rem;
 }
