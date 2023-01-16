@@ -186,7 +186,7 @@ async function buildGridTemplate (data) {
         return `<a href="/shoots/${index + 1}.html" class="portfolio-grid__item">`
             + (path.extname(file) === '.mp4' ?
                 `<video class="grid-video" src="/assets/grid-img/${index + 1}.mp4" autoplay muted loop></video>` :
-                `<img class="grid-img" loading="lazy" src="/assets/grid-img/${index + 1}.webp" width="${aspectRatios[index].width}" alt="Image ${index + 1}">`)
+                `<img class="grid-img" loading="lazy" src="/assets/grid-img/${index + 1}.webp" width="${aspectRatios[index].width}" height="${aspectRatios[index].height}" alt="Image ${index + 1}">`)
             + '</a>'
     }).join('')
 
