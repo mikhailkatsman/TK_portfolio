@@ -26,6 +26,7 @@ function manipulateHeader () {
         .classList.toggle(
             'header--active',
             !(window.location.pathname.includes('/index.html') ||
+            window.location.pathname.includes('/submit.html') ||
             window.location.pathname === '/')
         )
 }
