@@ -7,9 +7,12 @@
     margin: 0;
 }
 
-html, body {
-    height: 100%;
+html {
+    height: 100vh;
+    width: 100vw;
+}
 
+html, body {
     font-size: 62.5%;
 
     font-family: 'Urbanist', sans-serif;
@@ -58,14 +61,13 @@ html.is-animating .transition-fade {
 /* INDEX */
 /******************************************************/
 .index-container {
+    position: fixed;
     display: flex;
-    height: 100vh;
-    width: auto;
-    padding: 0 3.2rem;
+    height: 100%;
+    width: 100%;
     background-color: #111;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     overflow: hidden;
 }
@@ -76,7 +78,7 @@ html.is-animating .transition-fade {
 
 .backdrop-link,
 .backdrop-img {
-    max-width: 100%;
+    max-width: 80vw;
     max-height: 80vh;
 }
 
@@ -335,12 +337,16 @@ html.is-animating .transition-fade {
 /******************************************************/
 
 .glry-container {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
     max-width: 114.4rem;
-    height: 100vh;
     margin: 0 auto;
-    padding: 7.2rem 2.8rem calc(2.8rem + env(safe-area-inset-bottom));
+    padding: 7.2rem 2.8rem 2.8rem;
 
     box-sizing: border-box;
+    position: fixed;
 }
 
 ul.slides {

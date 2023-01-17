@@ -45,7 +45,7 @@ function displayGridData () {
             })
         }
         else if (media.nodeName === 'VIDEO') {
-            media.addEventListener('play', function () {
+            media.addEventListener('loadeddata', function () {
                 gridSpan.classList.add("data-loaded")
                 console.log(`video ${i} loaded`)
             })
