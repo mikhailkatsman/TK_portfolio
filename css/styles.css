@@ -189,6 +189,11 @@ html.is-animating .transition-fade {
 /******************************************************/
 /* NAV */
 /******************************************************/
+.nav {
+    position: relative;
+    z-index: 9999;
+}
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -386,7 +391,7 @@ ul.slides input {
     cursor: pointer;
     align-items: flex-end;
     width: 50%;
-    z-index: 9999;
+    z-index: 1000;
 
     opacity: 1;
     transition: opacity 0.3s;
@@ -445,4 +450,24 @@ input#img-4:checked ~ .glry-dots label#img-dot-4,
 input#img-5:checked ~ .glry-dots label#img-dot-5 {
     opacity: 1;
     height: 2rem;
+}
+
+/******************************************************/
+/* ABOUT */
+/******************************************************/
+
+.about-container {
+    max-width: 114.4rem;
+    margin: 13.4rem auto;
+    padding: 0 2.8rem;
+}
+
+/******************************************************/
+/* CONTACT */
+/******************************************************/
+
+.contact-container {
+    max-width: 114.4rem;
+    margin: 13.4rem auto;
+    padding: 0 2.8rem;
 }

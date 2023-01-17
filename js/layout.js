@@ -9,6 +9,10 @@ const layout = `
 
         <meta name="description" content="Tomila Katsman Photography Portfolio">
 
+        <link rel="icon" href="/assets/favicons/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -23,7 +27,7 @@ const layout = `
         <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script defer src="/js/index.js"></script>
 
-        <title>Tomila Katsman</title>
+        <title>Tomila Katsman | Portfolio</title>
     </head>
     <body>
         <header id="header" class="header">
