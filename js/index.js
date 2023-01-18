@@ -67,7 +67,7 @@ btnNavElement.addEventListener('click', function () {
 const swup = new Swup()
 document.addEventListener('swup:animationInStart', manipulateHeader)
 document.addEventListener('swup:popState', manipulateHeader)
-document.addEventListener('swup:contentReplaced', initMasonry)
+document.addEventListener('swup:contentReplaced', initMasonry, manipulateHeader)
 
 // Run functions once on page reload
 manipulateHeader()

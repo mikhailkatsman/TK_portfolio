@@ -508,7 +508,7 @@ input#img-5:checked ~ .glry-dots label#img-dot-5 {
 .contact-form textarea {   
     width: 100%;
     display: block;
-    padding: 1.6rem;
+    padding: 1.2rem;
     margin-bottom: 2.4rem;
 
     box-sizing: border-box;
@@ -516,21 +516,26 @@ input#img-5:checked ~ .glry-dots label#img-dot-5 {
     font-family: inherit;
     font-size: 1.8rem;
     font-weight: 500;
-    outline: none;
-    box-shadow: 0.1rem #111;
+    border: 0.01rem #111 solid;
 }
 
 .contact-form textarea {
     margin-bottom: 3.8rem !important;
+    resize: vertical;
+}
+
+.contact-form *:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.15rem #111;
 }
 
 .contact-form button {
     display: inline-block;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 1.2rem 3.2rem 1rem 3.2rem;
+    padding: 1.1rem 3.2rem 1rem 3.2rem;
     color: #fff;
     background-color: #111;
 
@@ -543,11 +548,6 @@ input#img-5:checked ~ .glry-dots label#img-dot-5 {
 
 .contact-form button:hover {
     opacity: 0.8;
-}
-
-.contact-form *:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.15rem #111;
 }
 
 /******************************************************/
