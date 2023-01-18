@@ -27,6 +27,7 @@ function manipulateHeader () {
             'header--active',
             !(window.location.pathname.includes('/index.html') ||
             window.location.pathname.includes('/submit.html') ||
+            window.location.pathname.includes('/submit') ||
             window.location.pathname === '/')
         )
 }
