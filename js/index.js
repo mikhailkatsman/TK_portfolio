@@ -79,6 +79,10 @@ function animateBackdrop () {
     }, 500);
 }
 
+window.addEventListener("pageshow", function(event) {
+    animateBackdrop();
+}, false);
+
 // Run functions once on page reload
 animateBackdrop()
 manipulateHeader()
