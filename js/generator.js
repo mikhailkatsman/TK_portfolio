@@ -192,11 +192,11 @@ async function buildGridTemplate (data) {
                             src="/assets/grid-img/${index + 1}.mp4"
                             width="${aspectRatios[index].width}" 
                             height="${aspectRatios[index].height}"
-                            autoplay muted loop playsinline>
+                            muted autoplay playsinline loop>
                         </video>
                     `
                 : `     
-                        <a href="/shoots/${index + 1}" class="grid-link">
+                        <a href="/portfolio/${index + 1}" class="grid-link">
                             <span id="grid-span-${index + 1}" class="grid-span"></span>
                             <img 
                                 class="grid-img"
