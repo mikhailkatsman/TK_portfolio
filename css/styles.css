@@ -81,6 +81,24 @@ html.is-animating .transition-fade {
 
 .backdrop {
     z-index: 1;
+    opacity: 0;
+    scale: 0.8;
+}
+
+.animate--backdrop {
+    animation: fadein_onload 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein_onload {
+    0% {
+        opacity: 0;
+        scale: 0.8;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 .backdrop-link,

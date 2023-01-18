@@ -196,7 +196,7 @@ async function buildGridTemplate (data) {
                         </video>
                     `
                 : `     
-                        <a href="/portfolio/${index + 1}" class="grid-link">
+                        <a href="/${index + 1}" class="grid-link">
                             <span id="grid-span-${index + 1}" class="grid-span"></span>
                             <img 
                                 class="grid-img"
