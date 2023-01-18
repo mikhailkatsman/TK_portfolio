@@ -48,19 +48,11 @@
         </header>
         <main id="swup" class="transition-fade">
             <div class="contact-container">
-                <form name="contact" method="POST" data-netlify="true" action="/submit.html">
-                    <p>
-                        <label>Your Name: <input type="text" name="name" required/></label>
-                    </p>
-                    <p>
-                        <label>Your Email: <input type="email" name="email" required/></label>
-                    </p>
-                    <p>
-                        <label>Your Message: <textarea name="message" required></textarea></label>
-                    </p>
-                    <p>
-                        <button type="submit">Send</button>
-                    </p>
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/submit.html">
+                        <label>Name<input type="text" name="name" required/></label>
+                        <label>Email<input type="email" name="email" required/></label>
+                        <label>Message<textarea name="message" required></textarea></label>
+                        <button type="submit">Get in touch</button>
                   </form>
             </div>
         </main>
