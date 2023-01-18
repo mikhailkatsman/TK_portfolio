@@ -517,6 +517,8 @@ input#img-5:checked ~ .glry-dots label#img-dot-5 {
     font-size: 1.8rem;
     font-weight: 500;
     border: 0.01rem #111 solid;
+
+    /* For Safari Mobile */
     border-radius: 0px !important;
 }
 

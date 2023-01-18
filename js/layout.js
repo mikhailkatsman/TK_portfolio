@@ -31,11 +31,11 @@ const layout = `
     </head>
     <body>
         <header id="header" class="header">
-            <a class="header-logo-link" href="/portfolio.html">Tomila Katsman</a>
+            <a class="header-logo-link" href="/portfolio">Tomila Katsman</a>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a class="nav-link" href="/about.html">About</a></li>
-                    <li><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li><a class="nav-link" href="/about">About</a></li>
+                    <li><a class="nav-link" href="/contact">Contact</a></li>
                     <li>
                         <a class="nav-link" href="https://www.instagram.com/tomilakatsman/?hl=en">
                             <img class="instagram-logo" src="/assets/svg/logo-instagram.svg" alt="Instagram link">
