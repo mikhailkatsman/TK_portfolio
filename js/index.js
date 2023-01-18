@@ -79,9 +79,11 @@ function animateBackdrop () {
     }, 500);
 }
 
-window.addEventListener("pageshow", function(event) {
-    animateBackdrop();
-}, false);
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        animateBackdrop();
+    }
+};
 
 // Run functions once on page reload
 animateBackdrop()
