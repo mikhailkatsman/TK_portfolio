@@ -67,25 +67,9 @@ btnNavElement.addEventListener('click', function () {
 // Initialize Swup and listen to transition events
 const swup = new Swup()
 document.addEventListener('swup:animationInStart', manipulateHeader)
-document.addEventListener('swup:popState', manipulateHeader, animateBackdrop)
+document.addEventListener('swup:popState', manipulateHeader)
 document.addEventListener('swup:contentReplaced', initMasonry)
 
-function animateBackdrop () {
-    if (!document.querySelector('.backdrop')) {
-        return
-    }
-    window.setTimeout(function () {
-        document.querySelector('.backdrop').classList.add('animate--backdrop');
-    }, 500);
-}
-
-window.onpageshow = function(event) {
-    if (event.persisted) {
-        animateBackdrop();
-    }
-};
-
 // Run functions once on page reload
-animateBackdrop()
 manipulateHeader()
 initMasonry()
