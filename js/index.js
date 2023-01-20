@@ -5,7 +5,7 @@
 const swup = new Swup()
 document.addEventListener('swup:animationInStart', manipulateHeader)
 document.addEventListener('swup:popState', manipulateHeader)
-document.addEventListener('swup:contentReplaced', initMasonry)
+document.addEventListener('swup:pageView', initMasonry)
 
 // Run functions once on page reload
 manipulateHeader()

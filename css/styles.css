@@ -335,20 +335,19 @@ html.is-animating .transition-fade {
 .grid-video {
     width: 100%;
     height: 100%;
-
-    opacity: 0;
-    transform: translateY(-50%);
 }
 
 .data-loaded {
-    animation: anim_onload 0.8s ease-out;
+    opacity: 0;
+    transform: translateY(-20%);
+    animation: anim_onload 0.6s cubic-bezier(.3,.5,.5,1);
     animation-fill-mode: forwards;
 }
 
 @keyframes anim_onload {
     0% {
         opacity: 0;
-        transform: translateY(-50%);
+        transform: translateY(-20%);
     }
     100% {
         opacity: 1;
