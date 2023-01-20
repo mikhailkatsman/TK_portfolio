@@ -1,6 +1,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
+// Initialize Swup and listen to transition events
+const swup = new Swup()
+document.addEventListener('swup:animationInStart', manipulateHeader)
+document.addEventListener('swup:popState', manipulateHeader)
+document.addEventListener('swup:contentReplaced', initMasonry)
+
+// Run functions once on page reload
+manipulateHeader()
+initMasonry()
+
 // initialise Minimasonry plugin
 function initMasonry () {
     if (!document.querySelector('.portfolio-grid')) {
@@ -37,18 +47,17 @@ function displayGridData () {
     const portfolioGrid = document.getElementById('portfolio-grid')
     for (let i = 1; i <= portfolioGrid.children.length - 2; i++) {
         const gridItem = document.getElementById(`grid-item-${i}`)
-        const gridSpan = document.getElementById(`grid-span-${i}`)
 
         const media = gridItem.querySelector('img, video')
         if (media.nodeName === 'IMG') {
             media.addEventListener('load', function () {
-                gridSpan.classList.add("data-loaded")
+                media.classList.add("data-loaded")
                 console.log(`img ${i} loaded`)
             })
         }
         else if (media.nodeName === 'VIDEO') {
             media.addEventListener('loadeddata', function () {
-                gridSpan.classList.add("data-loaded")
+                media.classList.add("data-loaded")
                 console.log(`video ${i} loaded`)
             })
         }
@@ -63,13 +72,3 @@ btnNavElement.addEventListener('click', function () {
     headerElement.classList.toggle('nav-open')
     headerElement.classList.toggle('header--tall')
 })
-
-// Initialize Swup and listen to transition events
-const swup = new Swup()
-document.addEventListener('swup:animationInStart', manipulateHeader)
-document.addEventListener('swup:popState', manipulateHeader)
-document.addEventListener('swup:contentReplaced', initMasonry)
-
-// Run functions once on page reload
-manipulateHeader()
-initMasonry()

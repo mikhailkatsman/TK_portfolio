@@ -182,29 +182,21 @@ async function buildGridTemplate (data) {
     }
 
     const shootsHtml = firstFiles.map((file, index) => {
-        return `<div id="grid-item-${index + 1}" class="grid-item">` +
+        return `<div id="grid-item-${index + 1}" class="grid-item" style="aspect-ratio:${aspectRatios[index].width}/${aspectRatios[index].height}">` +
             (path.extname(file) === '.mp4'
                 ? `     
-                        <span id="grid-span-${index + 1}" class="grid-span"></span>
                         <video 
                             class="grid-video" 
-                            style="aspect-ratio:${aspectRatios[index].width}/${aspectRatios[index].height}"
                             src="/assets/grid-img/${index + 1}.mp4"
-                            width="${aspectRatios[index].width}" 
-                            height="${aspectRatios[index].height}"
                             muted autoplay playsinline loop>
                         </video>
                     `
                 : `     
                         <a href="/portfolio/${index + 1}.html" class="grid-link">
-                            <span id="grid-span-${index + 1}" class="grid-span"></span>
                             <img 
                                 class="grid-img"
-                                style="aspect-ratio:${aspectRatios[index].width}/${aspectRatios[index].height}"
                                 loading="lazy" 
                                 src="/assets/grid-img/${index + 1}.webp" 
-                                width="${aspectRatios[index].width}" 
-                                height="${aspectRatios[index].height}" 
                                 alt="Image ${index + 1}"
                             >
                         </a>

@@ -51,7 +51,7 @@ html.is-leaving .transition-backdrop {
 }
 
 .transition-fade {
-    transition: 0.3s ease-in;
+    transition: 0.4s ease-in;
     opacity: 1;
 }
 
@@ -309,21 +309,18 @@ html.is-animating .transition-fade {
 }
 
 .gutter-sizer {
-    width: 0.3%;
+    width: 0.5%;
 }
 
 .grid-sizer,
 .grid-item {
-    width: 33.1%;
+    width: 33%;
 }
 
 .grid-item {
-    position: relative;
-    float: left;
-    display: block;
-    margin-bottom: 0.1%;
+    overflow: hidden;
+    margin-bottom: 0.5%;
 }
-
 
 .grid-link {
     opacity: 1;
@@ -334,25 +331,29 @@ html.is-animating .transition-fade {
     opacity: 0.8;
 }
 
-.grid-span {
-    visibility: visible;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    
-    background-color: #eee;
-    transition: background-color 0.4s;
-}
-
-.data-loaded {
-    background-color: transparent !important;
-}
-
 .grid-img,
 .grid-video {
     width: 100%;
     height: 100%;
+
+    opacity: 0;
+    transform: translateY(-50%);
+}
+
+.data-loaded {
+    animation: anim_onload 0.8s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anim_onload {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 /******************************************************/
