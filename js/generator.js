@@ -60,7 +60,7 @@ async function getData () {
 }
 
 async function buildShootsTemplates (data) {
-    const shootsDir = `${srcPath}/shoots`
+    const shootsDir = `${srcPath}/portfolio`
 
     // Creates a folder to store shoots directories at specified path
     await fs.mkdir(
@@ -196,7 +196,7 @@ async function buildGridTemplate (data) {
                         </video>
                     `
                 : `     
-                        <a href="/shoots/${index + 1}.html" class="grid-link">
+                        <a href="/portfolio/${index + 1}.html" class="grid-link">
                             <span id="grid-span-${index + 1}" class="grid-span"></span>
                             <img 
                                 class="grid-img"

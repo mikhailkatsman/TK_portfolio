@@ -30,7 +30,7 @@ html, body {
     touch-action: pan-y;
 }
 
-a {
+a, label {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
@@ -43,8 +43,7 @@ a {
 /* SWUP ANIMATIONS */
 /******************************************************/
 .transition-backdrop {
-    transition: 0.3s ease-in;
-    opacity: 1;
+    transition: all 0.4s ease-in;
 }
 
 html.is-leaving .transition-backdrop {
@@ -52,7 +51,7 @@ html.is-leaving .transition-backdrop {
 }
 
 .transition-fade {
-    transition: 0.2s ease-in;
+    transition: 0.3s ease-in;
     opacity: 1;
 }
 
@@ -79,10 +78,12 @@ html.is-animating .transition-fade {
     overflow: hidden;
 }
 
-.backdrop {
-    z-index: 1;
+.intro-animation-container {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
-    scale: 0.8;
+    scale: 0.5;
 
     animation: fadein_onload 1s ease-out;
     animation-fill-mode: forwards;
@@ -92,12 +93,16 @@ html.is-animating .transition-fade {
 @keyframes fadein_onload {
     0% {
         opacity: 0;
-        scale: 0.8;
+        scale: 0.5;
     }
     100% {
         opacity: 1;
         scale: 1;
     }
+}
+
+.backdrop {
+    z-index: 2;
 }
 
 .backdrop-link,
@@ -108,25 +113,19 @@ html.is-animating .transition-fade {
 
 .title-box {
     position: absolute;
-    width: 24rem;
-    height: 4rem;
-    z-index: 2;
+    width: 35vw;
+    max-width: 256px;
+    z-index: 3;
 
-    text-align: center;
+    object-fit: contain;
 
     pointer-events: none;
+    box-sizing: border-box;
 }
 
-.title-text {
-    font-size: 1.6rem;
-    color: #111;
-    letter-spacing: -0.15rem;
-    font-weight: 900;
-    line-height: 2rem;
-
-    text-transform: uppercase;
-    white-space: pre-line;
-
+.title-logo {
+    width: 100%;
+    height: auto;
 }
 
 /******************************************************/
@@ -420,7 +419,6 @@ ul.slides input {
 
 .glry-controls label {
     display: none;
-    cursor: pointer;
     align-items: flex-end;
     width: 50%;
     z-index: 1000;
