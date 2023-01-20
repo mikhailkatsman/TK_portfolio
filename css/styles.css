@@ -338,8 +338,6 @@ html.is-animating .transition-fade {
 }
 
 .data-loaded {
-    opacity: 0;
-    transform: translateY(-20%);
     animation: anim_onload 0.6s cubic-bezier(.3,.5,.5,1);
     animation-fill-mode: forwards;
 }
