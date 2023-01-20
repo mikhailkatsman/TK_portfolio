@@ -52,21 +52,36 @@ function displayGridData () {
         if (media.nodeName === 'IMG') {
             if(!media.complete) {
                 media.addEventListener('load', function () {
-                    media.classList.add("data-loaded")
-                    console.log(`img ${i} loaded`)
+                    setTimeout(function () {
+                        media.classList.add("data-loaded")
+                    },
+                        getRandomInt(0, 500)
+                    )
                 })
             } else {
-                media.classList.add("data-loaded")
-                console.log(`img ${i} already loaded`)
+                setTimeout(function () {
+                    media.classList.add("data-loaded")
+                },
+                    getRandomInt(0, 500)
+                )
             }
         }
         else if (media.nodeName === 'VIDEO') {
-            media.addEventListener('loadeddata', function () {
+            if(!media.complete) {
+                media.addEventListener('loadeddata', function () {
+                    media.classList.add("data-loaded")
+                    console.log(`video ${i} loaded`)
+                })
+            } else {
                 media.classList.add("data-loaded")
                 console.log(`video ${i} loaded`)
-            })
+            }
         }
     }
+}
+
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
 }
 
 // Nav Button operation
