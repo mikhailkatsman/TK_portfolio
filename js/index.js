@@ -48,12 +48,17 @@ function displayGridData () {
     for (let i = 1; i <= portfolioGrid.children.length - 2; i++) {
         const gridItem = document.getElementById(`grid-item-${i}`)
 
-        const media = gridItem.querySelector('img, video')
+        let media = gridItem.querySelector('img, video')
         if (media.nodeName === 'IMG') {
-            media.addEventListener('load', function () {
+            if(!media.complete) {
+                media.addEventListener('load', function () {
+                    media.classList.add("data-loaded")
+                    console.log(`img ${i} loaded`)
+                })
+            } else {
                 media.classList.add("data-loaded")
-                console.log(`img ${i} loaded`)
-            })
+                console.log(`img ${i} already loaded`)
+            }
         }
         else if (media.nodeName === 'VIDEO') {
             media.addEventListener('loadeddata', function () {
