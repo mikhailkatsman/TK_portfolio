@@ -361,65 +361,62 @@ html.is-animating .transition-fade {
 /******************************************************/
 
 .glry-container {
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     max-width: 114.4rem;
     margin: 0 auto;
     padding: 7.2rem 2.8rem 2.8rem;
 
-    box-sizing: border-box;
-    position: fixed;
+    
 }
 
-ul.slides {
-    display: block;
+.canvas {
     position: relative;
+    width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    list-style: none;
+    box-sizing: border-box;
 }
 
-ul.slides input {
-    display: none;
-}
-
-.slide-image {
-    display: block;
+.img-container {
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 100%;
-    opacity: 0;
-    text-align: center;
-    margin-bottom: 4.8rem;
+    bottom: 4.8rem;
+    left: 0;
+    right: 0;
+    overflow: hidden;
 
-    transition: opacity 0.5s ease-in-out;
-
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 }
 
-.slide-image img {
-    width: 100%;
+.img-container img {
+    position: absolute;
     height: 100%;
+    width: 100%;
     object-fit: contain;
-    display: inline-block;
+    
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.img-container img.visible {
+    opacity: 1;
 }
 
 .glry-controls {
-    display: flex;
     position: absolute;
-    justify-content: space-between;
+    display: flex;
     height: 100%;
     width: 100%;
+    bottom: 0;
     color: #111;
 }
 
 .glry-controls label {
-    display: none;
+    display: flex;
     align-items: flex-end;
     width: 50%;
     z-index: 1000;
@@ -432,11 +429,11 @@ ul.slides input {
     opacity: 0.3;
 }
 
-.glry-controls .prev-slide {
+#left-control {
     justify-content: left;
 }
 
-.glry-controls .next-slide {
+#right-control {
     justify-content: right;
 }
 
@@ -445,10 +442,12 @@ ul.slides input {
     width: auto;
 }
 
-.glry-dots {
-    display: flex;
+.dots-container {
     position: absolute;
+    display: flex;
     justify-content: center;
+    align-items: center;
+
     gap: 1rem;
     bottom: 0;
     left: 40%;
@@ -456,29 +455,16 @@ ul.slides input {
     z-index: 9999;
 }
 
-.glry-dots .glry-dot {
+.dots-container span {
     width: 0.3rem;
-    height: 1.2rem;
     background-color: #111;
+    
     opacity: 0.3;
-    align-self: center;
-
+    height: 1.2rem;
+    transition: opacity 0.4s;
 }
 
-input:checked + .slide-container .slide-image {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-input:checked + .slide-container .glry-controls label {
-    display: flex;
-}
-
-input#img-1:checked ~ .glry-dots label#img-dot-1,
-input#img-2:checked ~ .glry-dots label#img-dot-2,
-input#img-3:checked ~ .glry-dots label#img-dot-3,
-input#img-4:checked ~ .glry-dots label#img-dot-4,
-input#img-5:checked ~ .glry-dots label#img-dot-5 {
+.dots-container span.visible {
     opacity: 1;
     height: 2rem;
 }

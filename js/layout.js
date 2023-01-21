@@ -25,6 +25,7 @@ const layout = `
 
         <script defer src="https://unpkg.com/swup@2.0.19/dist/swup.min.js"></script>
         <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script defer src="https://hammerjs.github.io/dist/hammer.min.js"></script>
         <script defer src="/js/index.js"></script>
 
         <title>Tomila Katsman | Portfolio</title>

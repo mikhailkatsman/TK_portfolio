@@ -72,37 +72,32 @@ async function buildShootsTemplates (data) {
         const mainContent = `
         <main id="swup" class="transition-fade">
             <div class="glry-container">
-                <ul class="slides">
+                <div id="canvas" class="canvas">
+                    <div id="img-container" class="img-container">
                     ${files.map(function (file, index) {
-        return `
-                    <input 
-                        type="radio" 
-                        name="radio-buttons"
-                        id="img-${index + 1}" ${index === 0 ? 'checked' : ''}
-                    />
-                    <li class="slide-container">
-                        <div class="slide-image">
-                            <img src="${file}"/>
-                        </div>
-                        <div class="glry-controls">
-                            <label for="img-${(index + files.length - 1) % files.length + 1}" class="prev-slide">
-                                <img src="/assets/svg/chevron-back-sharp.svg" alt="back-arrow">
-                            </label>
-                            <label for="img-${(index + 1) % files.length + 1}" class="next-slide">
-                                <img src="/assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
-                            </label>
-                        </div>
-                    </li>
-                    `
-    }).join('')}
-                    <div class="glry-dots">
-                        ${files.map(function (file, index) {
-        return `
-                        <label for="img-${index + 1}" class="glry-dot" id="img-dot-${index + 1}"></label>
+            return `
+                        <img src="${file}" alt="${file}" />
                         `
-    }).join('')}
+        }).join('')}
                     </div>
-                </ul>
+
+                    <div id="dots-container" class="dots-container">
+                        ${files.map(function (file, index) {
+            return `
+                        <span id="dot-${index}"></span>
+                        `
+        }).join('')}
+                    </div>
+
+                    <div class="glry-controls">
+                        <label id="left-control" class="prev-slide">
+                            <img src="/assets/svg/chevron-back-sharp.svg" alt="back-arrow">
+                        </label>
+                        <label id="right-control" class="next-slide">
+                            <img src="/assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
+                        </label>
+                    </div>
+                </div>
             </div>
         </main>
     `

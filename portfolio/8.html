@@ -24,6 +24,7 @@
 
         <script defer src="https://unpkg.com/swup@2.0.19/dist/swup.min.js"></script>
         <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script defer src="https://hammerjs.github.io/dist/hammer.min.js"></script>
         <script defer src="/js/index.js"></script>
 
         <title>Tomila Katsman | Portfolio</title>
@@ -49,33 +50,28 @@
         </header>
         <main id="swup" class="transition-fade">
             <div class="glry-container">
-                <ul class="slides">
+                <div id="canvas" class="canvas">
+                    <div id="img-container" class="img-container">
                     
-                    <input 
-                        type="radio" 
-                        name="radio-buttons"
-                        id="img-1" checked
-                    />
-                    <li class="slide-container">
-                        <div class="slide-image">
-                            <img src="/assets/projects/8/1.webp"/>
-                        </div>
-                        <div class="glry-controls">
-                            <label for="img-1" class="prev-slide">
-                                <img src="/assets/svg/chevron-back-sharp.svg" alt="back-arrow">
-                            </label>
-                            <label for="img-1" class="next-slide">
-                                <img src="/assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
-                            </label>
-                        </div>
-                    </li>
-                    
-                    <div class="glry-dots">
-                        
-                        <label for="img-1" class="glry-dot" id="img-dot-1"></label>
+                        <img src="/assets/projects/8/1.webp" alt="/assets/projects/8/1.webp" />
                         
                     </div>
-                </ul>
+
+                    <div id="dots-container" class="dots-container">
+                        
+                        <span id="dot-0"></span>
+                        
+                    </div>
+
+                    <div class="glry-controls">
+                        <label id="left-control" class="prev-slide">
+                            <img src="/assets/svg/chevron-back-sharp.svg" alt="back-arrow">
+                        </label>
+                        <label id="right-control" class="next-slide">
+                            <img src="/assets/svg/chevron-forward-sharp.svg" alt="forward-arrow">
+                        </label>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
