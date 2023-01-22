@@ -323,7 +323,7 @@ html.is-animating .transition-fade {
 
 .grid-item {
     overflow: hidden;
-    margin-bottom: 0.5%;
+    margin-bottom: 0.3%;
 }
 
 .grid-link {
@@ -338,7 +338,7 @@ html.is-animating .transition-fade {
 .grid-img,
 .grid-video {
     width: 100%;
-    height: 100%;
+    height: auto;
 
     opacity: 0;
     transform: translateY(-20%);

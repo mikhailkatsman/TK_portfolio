@@ -22,6 +22,8 @@ function initMasonry () {
     }
 
     console.log('portfolio grid detected')
+
+    var grid = document.querySelectorAll('.portfolio-grid')
     const msnry = new Masonry('.portfolio-grid', {
         columnWidth: '.grid-sizer',
         gutter: '.gutter-sizer',
@@ -67,14 +69,12 @@ function displayGridData () {
             }
         }
         else if (media.nodeName === 'VIDEO') {
-            if(!media.complete) {
+            if(!media.readyState === 4) {
                 media.addEventListener('loadeddata', function () {
                     media.classList.add("data-loaded")
-                    console.log(`video ${i} loaded`)
                 })
             } else {
                 media.classList.add("data-loaded")
-                console.log(`video ${i} loaded`)
             }
         }
     }

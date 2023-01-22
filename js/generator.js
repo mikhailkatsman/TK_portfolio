@@ -177,12 +177,14 @@ async function buildGridTemplate (data) {
     }
 
     const shootsHtml = firstFiles.map((file, index) => {
-        return `<div id="grid-item-${index + 1}" class="grid-item" style="aspect-ratio:${aspectRatios[index].width}/${aspectRatios[index].height}">` +
+        return `<div id="grid-item-${index + 1}" class="grid-item">` +
             (path.extname(file) === '.mp4'
                 ? `     
                         <video 
                             class="grid-video" 
                             src="/assets/grid-img/${index + 1}.mp4"
+                            width="${aspectRatios[index].width}"
+                            height="${aspectRatios[index].height}"
                             muted autoplay playsinline loop>
                         </video>
                     `
@@ -192,6 +194,8 @@ async function buildGridTemplate (data) {
                                 class="grid-img"
                                 loading="lazy" 
                                 src="/assets/grid-img/${index + 1}.jpg" 
+                                width="${aspectRatios[index].width}"
+                                height="${aspectRatios[index].height}"
                                 alt="Image ${index + 1}"
                             >
                         </a>
