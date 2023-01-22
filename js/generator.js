@@ -182,7 +182,7 @@ async function buildGridTemplate (data) {
             await extractFrame({
                 input: `${srcPath}/${firstFiles[i]}`,
                 output: `${gridImgsDir}/${i + 1}-poster.jpg`,
-                offset: 100,
+                offset: 30,
             })
         }
     }

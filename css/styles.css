@@ -347,6 +347,10 @@ html.is-animating .transition-fade {
     transform: translateY(-20%);
 }
 
+.grid-video[poster]{
+    object-fit:fill
+}
+
 .data-loaded {
     animation: anim_onload 0.6s cubic-bezier(.3,.5,.5,1);
     animation-fill-mode: forwards;
@@ -455,19 +459,21 @@ html.is-animating .transition-fade {
     position: absolute;
     display: flex;
     display: -webkit-flex;
-    justify-content:space-between;
+    justify-content: center;
     align-items: center;
     bottom: 0;
-    left: 35%;
-    right: 35%;
+    left: 0;
+    right: 0;
     z-index: 9999;
 }
 
 .dots-container span {
+    display: block;
     width: 0.3rem;
     background-color: #111;
+    margin: 0 2rem;
     
-    opacity: 0.3;
+    opacity: 0.2;
     height: 1rem;
     transition: opacity 0.4s;
 }
