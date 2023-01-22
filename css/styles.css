@@ -69,6 +69,7 @@ html.is-animating .transition-fade {
 .index-container {
     position: fixed;
     display: flex;
+    display: -webkit-flex;
     height: 100%;
     width: 100%;
     background-color: #111;
@@ -133,6 +134,7 @@ html.is-animating .transition-fade {
 /******************************************************/
 .header {
     display: flex;
+    display: -webkit-flex;
     /* Fixed height for header because it is "sticky", for consistency */
     /* default height 6.4rem */
     height: 6.4rem;
@@ -224,6 +226,7 @@ html.is-animating .transition-fade {
 .nav-list {
     list-style: none;
     display: flex;
+    display: -webkit-flex;
     align-items: center;
     gap: 2rem;
 }
@@ -409,6 +412,7 @@ html.is-animating .transition-fade {
 .glry-controls {
     position: absolute;
     display: flex;
+    display: -webkit-flex;
     height: 100%;
     width: 100%;
     bottom: 0;
@@ -417,6 +421,7 @@ html.is-animating .transition-fade {
 
 .glry-controls label {
     display: flex;
+    display: -webkit-flex;
     align-items: flex-end;
     width: 50%;
     z-index: 1000;
@@ -430,11 +435,11 @@ html.is-animating .transition-fade {
 }
 
 #left-control {
-    justify-content: left;
+    justify-content: flex-start;
 }
 
 #right-control {
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .glry-controls img {
@@ -445,13 +450,12 @@ html.is-animating .transition-fade {
 .dots-container {
     position: absolute;
     display: flex;
-    justify-content: center;
+    display: -webkit-flex;
+    justify-content:space-between;
     align-items: center;
-
-    gap: 1rem;
     bottom: 0;
-    left: 40%;
-    right: 40%;
+    left: 35%;
+    right: 35%;
     z-index: 9999;
 }
 
@@ -460,13 +464,13 @@ html.is-animating .transition-fade {
     background-color: #111;
     
     opacity: 0.3;
-    height: 1.2rem;
+    height: 1rem;
     transition: opacity 0.4s;
 }
 
 .dots-container span.visible {
     opacity: 1;
-    height: 2rem;
+    height: 2.2rem;
 }
 
 /******************************************************/
@@ -493,6 +497,7 @@ html.is-animating .transition-fade {
     height: 100%;
     width: 100%;
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
     justify-content: center;
     align-items: space-between;
@@ -562,6 +567,7 @@ html.is-animating .transition-fade {
 .submit-container {
     position: fixed;
     display: flex;
+    display: -webkit-flex;
     height: 100%;
     width: 100%;
     background-color: #111;
