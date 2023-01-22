@@ -79,7 +79,7 @@ html.is-animating .transition-fade {
     overflow: hidden;
 }
 
-.intro-animation-container {
+.backdrop-animation-container {
     display: inherit;
     justify-content: center;
     align-items: center;
@@ -87,12 +87,12 @@ html.is-animating .transition-fade {
     transform:scale(0.5, 0.5);
     -webkit-transform:scale(0.5, 0.5);
 
-    animation: fadein_onload 1s ease-out;
+    animation: backdrop_onload 1s ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
 }
 
-@keyframes fadein_onload {
+@keyframes backdrop_onload {
     0% {
         opacity: 0;
         transform:scale(0.5, 0.5);
@@ -115,16 +115,37 @@ html.is-animating .transition-fade {
     max-height: 80vh;
 }
 
-.title-box {
+.title-animation-container {
+    display: inherit;
     position: absolute;
-    width: 35vw;
-    max-width: 256px;
-    z-index: 3;
+    width: 30vw;
+    max-width: 200px;
 
     object-fit: contain;
 
     pointer-events: none;
     box-sizing: border-box;
+
+    transform: scale(10, 10);
+    opacity: 0;
+    animation: title_onload 0.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+.title-box {
+    z-index: 3;
+}
+
+@keyframes title_onload {
+    0% {
+        transform: scale(10, 10);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
 }
 
 .title-logo {
