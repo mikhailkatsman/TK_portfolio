@@ -10,8 +10,8 @@ const srcPath = path.resolve(__dirname, '..')
 
 // Specifies the file extension for later
 // Makes sure that if we drop something stupid in folder it will not cause any trouble
-const extRegex = /\.(webp|mp4)$/i
-const webpRegex = /\.webp$/i
+const extRegex = /\.(jpg|mp4)$/i
+const jpgRegex = /\.jpg$/i
 
 // Gets data and then generates templates
 getData().then(async function (data) {
@@ -136,8 +136,8 @@ async function buildGridTemplate (data) {
         // Retrieve file
         const file = await fs.readFile(`${srcPath}/${firstFiles[i]}`)
 
-        // For .webp
-        if (webpRegex.test(firstFiles[i])) {
+        // For .jpg
+        if (jpgRegex.test(firstFiles[i])) {
             // Calculate img aspect ratio
             const metadata = await sharp(file).metadata()
 
@@ -146,7 +146,7 @@ async function buildGridTemplate (data) {
             // Resize file, save new file in new directory
             await sharp(file)
                 .resize({ width: 800 })
-                .toFile(`${gridImgsDir}/${i + 1}.webp`)
+                .toFile(`${gridImgsDir}/${i + 1}.jpg`)
                 .catch(err => {
                     console.log(err)
                 })
@@ -191,7 +191,7 @@ async function buildGridTemplate (data) {
                             <img 
                                 class="grid-img"
                                 loading="lazy" 
-                                src="/assets/grid-img/${index + 1}.webp" 
+                                src="/assets/grid-img/${index + 1}.jpg" 
                                 alt="Image ${index + 1}"
                             >
                         </a>
