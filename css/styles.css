@@ -149,7 +149,7 @@ html.is-animating .transition-fade {
     padding: 0 2.8rem;
 
     /* Push header content apart */
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 
     /* Blur background objects */
@@ -221,6 +221,7 @@ html.is-animating .transition-fade {
 .nav {
     position: relative;
     z-index: 9999;
+    width: 30%;
 }
 
 .nav-list {
@@ -228,7 +229,7 @@ html.is-animating .transition-fade {
     display: flex;
     display: -webkit-flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
 }
 
 .nav-link:link,
