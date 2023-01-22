@@ -84,7 +84,8 @@ html.is-animating .transition-fade {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    scale: 0.5;
+    transform:scale(0.5, 0.5);
+    -webkit-transform:scale(0.5, 0.5);
 
     animation: fadein_onload 1s ease-out;
     animation-fill-mode: forwards;
@@ -94,11 +95,13 @@ html.is-animating .transition-fade {
 @keyframes fadein_onload {
     0% {
         opacity: 0;
-        scale: 0.5;
+        transform:scale(0.5, 0.5);
+        -webkit-transform:scale(0.5, 0.5);
     }
     100% {
         opacity: 1;
-        scale: 1;
+        transform:scale(1, 1);
+        -webkit-transform:scale(1, 1);
     }
 }
 
