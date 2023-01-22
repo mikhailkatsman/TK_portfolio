@@ -4,6 +4,10 @@ const layout = require('./layout.js')
 const sharp = require('sharp')
 const ffprobe = require('ffprobe')
 const ffprobeStatic = require('ffprobe-static')
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
+const extractFrame = require('ffmpeg-extract-frame')
 
 // Set absolute path to project src
 const srcPath = path.resolve(__dirname, '..')
@@ -161,7 +165,8 @@ async function buildGridTemplate (data) {
                 .then(metadata => aspectRatios.push({
                     width: metadata.streams[0].width,
                     height: metadata.streams[0].height
-                }))
+                })
+            )
 
             await fs.writeFile(
                 `${gridImgsDir}/${i + 1}.mp4`,
@@ -173,6 +178,12 @@ async function buildGridTemplate (data) {
                     }
                 }
             )
+
+            await extractFrame({
+                input: `${srcPath}/${firstFiles[i]}`,
+                output: `${gridImgsDir}/${i + 1}-poster.jpg`,
+                offset: 100,
+            })
         }
     }
 
@@ -183,6 +194,7 @@ async function buildGridTemplate (data) {
                         <video 
                             class="grid-video" 
                             src="/assets/grid-img/${index + 1}.mp4"
+                            poster="/assets/grid-img/${index + 1}-poster.jpg"
                             width="${aspectRatios[index].width}"
                             height="${aspectRatios[index].height}"
                             muted autoplay playsinline loop>

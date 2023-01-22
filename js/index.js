@@ -23,7 +23,6 @@ function initMasonry () {
 
     console.log('portfolio grid detected')
 
-    var grid = document.querySelectorAll('.portfolio-grid')
     const msnry = new Masonry('.portfolio-grid', {
         columnWidth: '.grid-sizer',
         gutter: '.gutter-sizer',
