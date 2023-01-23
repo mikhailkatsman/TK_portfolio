@@ -149,7 +149,7 @@ async function buildGridTemplate (data) {
 
             // Resize file, save new file in new directory
             await sharp(file)
-                .resize({ width: 800 })
+                .resize({ width: 750 })
                 .toFile(`${gridImgsDir}/${i + 1}.jpg`)
                 .catch(err => {
                     console.log(err)

@@ -115,7 +115,8 @@ html.is-animating .transition-fade {
     max-height: 80vh;
 }
 
-.title-animation-container {
+.title-animation-container,
+.focus-animation-container {
     display: inherit;
     position: absolute;
     width: 30vw;
@@ -125,7 +126,9 @@ html.is-animating .transition-fade {
 
     pointer-events: none;
     box-sizing: border-box;
+}
 
+.title-animation-container {
     transform: scale(10, 10);
     opacity: 0;
     animation: title_onload 0.5s ease-out;
@@ -133,8 +136,27 @@ html.is-animating .transition-fade {
     animation-delay: 0.5s;
 }
 
-.title-box {
+.focus-animation-container {
+    opacity: 0;
+    animation: focus_onload 2s infinite;
+    animation-delay: 1s;
+}
+
+.title-box,
+.focus-box {
     z-index: 3;
+}
+
+@keyframes focus_onload {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes title_onload {
@@ -148,7 +170,8 @@ html.is-animating .transition-fade {
     }
 }
 
-.title-logo {
+.title-logo,
+.focus-img {
     width: 100%;
     height: auto;
 }
