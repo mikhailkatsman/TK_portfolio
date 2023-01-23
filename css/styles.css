@@ -224,8 +224,7 @@ html.is-animating .transition-fade {
 }
 
 /* Constant header logo */
-.header-logo-link:link,
-.header-logo-link:visited {
+.header-logo-link {
     position: absolute;
     top: 1.2rem;
     left: 2.8rem;
@@ -247,11 +246,10 @@ html.is-animating .transition-fade {
 .header-logo-link::after {
     content: "";
     position: absolute;
-    left: 50%;
+    top: 100%;
+    left: 0;
     width: 0;
     height: 3px;
-    top: 100%;
-    transform: translateX(-50%) scaleX(0);
     background-color: #111;
     transition: all 0.2s ease-out;
 }
@@ -259,7 +257,6 @@ html.is-animating .transition-fade {
 .header-logo-link:hover::after,
 .header-logo-link:active::after {
     width: 100%;
-    transform: translateX(-50%) scaleX(1);
 }
 
 /******************************************************/
@@ -279,10 +276,8 @@ html.is-animating .transition-fade {
     justify-content: space-between;
 }
 
-.nav-link:link,
-.nav-link:visited,
-.instagram-logo:link,
-.instagram-logo:visited {
+.nav-link,
+.instagram-logo {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -299,11 +294,10 @@ html.is-animating .transition-fade {
 .instagram-logo::after {
     content: "";
     position: absolute;
-    left: 50%;
+    top: 100%;
+    left: 0;
     width: 0;
     height: 2px;
-    top: 100%;
-    transform: translateX(-50%) scaleX(0);
     background-color: #111;
     transition: all 0.2s ease-out;
 }
@@ -313,7 +307,6 @@ html.is-animating .transition-fade {
 .instagram-logo:hover::after,
 .instagram-logo:active::after {
     width: 100%;
-    transform: translateX(-50%) scaleX(1);
 }
 
 .instagram-logo {
