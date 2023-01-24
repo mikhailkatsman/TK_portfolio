@@ -19,10 +19,11 @@ html {
     width: 100vw;
 }
 
-html, body {
+html,
+body {
     font-size: 62.5%;
 
-    font-family: 'Urbanist', sans-serif;
+    font-family: "Urbanist", sans-serif;
     line-height: 1;
     font-weight: 400;
 
@@ -30,7 +31,8 @@ html, body {
     touch-action: pan-y;
 }
 
-a, label {
+a,
+label {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
@@ -84,8 +86,8 @@ html.is-animating .transition-fade {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform:scale(0.5, 0.5);
-    -webkit-transform:scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
 
     animation: backdrop_onload 1s ease-out;
     animation-fill-mode: forwards;
@@ -95,13 +97,13 @@ html.is-animating .transition-fade {
 @keyframes backdrop_onload {
     0% {
         opacity: 0;
-        transform:scale(0.5, 0.5);
-        -webkit-transform:scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
     }
     100% {
         opacity: 1;
-        transform:scale(1, 1);
-        -webkit-transform:scale(1, 1);
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
     }
 }
 
@@ -139,7 +141,7 @@ html.is-animating .transition-fade {
 .focus-animation-container {
     opacity: 0;
     animation: focus_onload 2s infinite;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 .title-box,
@@ -384,12 +386,12 @@ html.is-animating .transition-fade {
     transform: translateY(-20%);
 }
 
-.grid-video[poster]{
-    object-fit:fill
+.grid-video[poster] {
+    object-fit: fill;
 }
 
 .data-loaded {
-    animation: anim_onload 0.6s cubic-bezier(.3,.5,.5,1);
+    animation: anim_onload 0.6s cubic-bezier(0.3, 0.5, 0.5, 1);
     animation-fill-mode: forwards;
 }
 
@@ -417,8 +419,6 @@ html.is-animating .transition-fade {
     max-width: 114.4rem;
     margin: 0 auto;
     padding: 7.2rem 2.8rem 2.8rem;
-
-    
 }
 
 .canvas {
@@ -445,7 +445,7 @@ html.is-animating .transition-fade {
     height: 100%;
     width: 100%;
     object-fit: contain;
-    
+
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
 }
@@ -509,7 +509,7 @@ html.is-animating .transition-fade {
     width: 0.3rem;
     background-color: #111;
     margin: 0 2rem;
-    
+
     opacity: 0.2;
     height: 1rem;
     transition: opacity 0.4s;
@@ -549,7 +549,7 @@ html.is-animating .transition-fade {
     justify-content: center;
     align-items: space-between;
 }
-  
+
 .contact-form label {
     font-size: 1.4rem;
     font-weight: 700;
@@ -559,7 +559,7 @@ html.is-animating .transition-fade {
 }
 
 .contact-form input,
-.contact-form textarea {   
+.contact-form textarea {
     width: 100%;
     display: block;
     padding: 1.2rem;
@@ -656,5 +656,5 @@ html.is-animating .transition-fade {
     font-weight: 600;
     line-height: 10rem;
 
-    white-space: pre-line; 
+    white-space: pre-line;
 }

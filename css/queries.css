@@ -3,70 +3,70 @@
 /******************************************************/
 
 @media (max-width: 40rem) {
-  .btn-mobile-nav {
-    display: block;
-    z-index: 9999;
-  }
+    .btn-mobile-nav {
+        display: block;
+        z-index: 9999;
+    }
 
-  .nav {
-    position: absolute;
-    width: auto;
-    top: 6.4rem;
-    left: 0;
-    right: 0;
-    height: 6.4rem;
-    padding: 0 2.8rem;
+    .nav {
+        position: absolute;
+        width: auto;
+        top: 6.4rem;
+        left: 0;
+        right: 0;
+        height: 6.4rem;
+        padding: 0 2.8rem;
 
-    z-index: 9999;
+        z-index: 9999;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
 
-    transform: translateY(-50%);
+        transform: translateY(-50%);
 
-    /* Hide nav by default */
-    /* 1. Hide visually */
-    opacity: 0;
-    /* 2. Make unaccessible to mouce and keyboard */
-    pointer-events: none;
-    /* 3. Hide from screen readers */
-    visibility: hidden;
-  }
+        /* Hide nav by default */
+        /* 1. Hide visually */
+        opacity: 0;
+        /* 2. Make unaccessible to mouce and keyboard */
+        pointer-events: none;
+        /* 3. Hide from screen readers */
+        visibility: hidden;
+    }
 
-  .nav-open .nav {
-    /* Show nav */
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: translateY(0);
-  }
+    .nav-open .nav {
+        /* Show nav */
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-  .nav-open .icon-mobile-nav[alt="close-sharp"] {
-    opacity: 1;
-  }
+    .nav-open .icon-mobile-nav[alt="close-sharp"] {
+        opacity: 1;
+    }
 
-  .nav-open .icon-mobile-nav[alt="menu-sharp"] {
-    opacity: 0;
-  }
+    .nav-open .icon-mobile-nav[alt="menu-sharp"] {
+        opacity: 0;
+    }
 
-  .nav-link:link,
-  .nav-link:visited {
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
+    .nav-link:link,
+    .nav-link:visited {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
 
-  .nav-list {
-    width: 100%;
-    align-items: center;
-  }
+    .nav-list {
+        width: 100%;
+        align-items: center;
+    }
 
-  .instagram-logo {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
+    .instagram-logo {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
 }
 
 /******************************************************/
@@ -74,9 +74,9 @@
 /******************************************************/
 
 @media (min-width: 50rem) {
-  html.is-leaving .transition-backdrop{
-    transform: scale(4);
-  }
+    html.is-leaving .transition-backdrop {
+        transform: scale(4);
+    }
 }
 
 /******************************************************/
@@ -84,9 +84,9 @@
 /******************************************************/
 
 @media (min-width: 68rem) {
-  html.is-leaving .transition-backdrop{
-    transform: scale(5);
-  }
+    html.is-leaving .transition-backdrop {
+        transform: scale(5);
+    }
 }
 
 /******************************************************/
@@ -94,7 +94,7 @@
 /******************************************************/
 
 @media (min-width: 84rem) {
-  html.is-leaving .transition-backdrop{
-    transform: scale(6);
-  }
+    html.is-leaving .transition-backdrop {
+        transform: scale(6);
+    }
 }
