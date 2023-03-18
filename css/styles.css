@@ -525,9 +525,36 @@ html.is-animating .transition-fade {
 /******************************************************/
 
 .about-container {
+    display: flex;
     max-width: 114.4rem;
     margin: 13.4rem auto;
     padding: 0 2.8rem;
+}
+
+.about-col {
+    width: 100%;
+}
+
+.about-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 5rem;
+}
+
+.about-text {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-right: 16rem;
+}
+
+.portrait-container {
+    margin-right: 3.2rem;
+}
+
+.portrait-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 /******************************************************/

@@ -1,4 +1,24 @@
 /******************************************************/
+/* MIN 1024px WV */
+/******************************************************/
+
+@media (max-width: 64rem) {
+    .about-text {
+        margin-right: 8rem;
+    }
+}
+
+/******************************************************/
+/* MIN 920px WV */
+/******************************************************/
+
+@media (max-width: 57.5rem) {
+    .about-text {
+        margin-right: 1rem;
+    }
+}
+
+/******************************************************/
 /* MAX 640px WV NAV BUTTON*/
 /******************************************************/
 
@@ -66,6 +86,24 @@
     .instagram-logo {
         width: 2.4rem;
         height: 2.4rem;
+    }
+
+    .about-text {
+        margin-right: 0;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portrait-container {
+        margin-right: 0;
+        margin-bottom: 4rem;
+    }
+
+    .about-title {
+        margin-bottom: 2rem;
     }
 }
 
