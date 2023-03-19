@@ -347,6 +347,7 @@ html.is-animating .transition-fade {
 .portfolio-container {
     max-width: 114.4rem;
     margin: 7.2rem auto;
+    margin-bottom: 12.8rem;
     padding: 0 2.8rem;
 }
 
