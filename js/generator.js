@@ -225,6 +225,11 @@ async function buildGridTemplate (data) {
                     ${shootsHtml}
                 </div>
             </div>
+            <div class="instagram-link-container">
+                <a class="nav-link--bottom" href="https://www.instagram.com/tomilakatsman/?hl=en">
+                    <img class="instagram-logo--bottom" src="/assets/svg/logo-instagram.svg" alt="Instagram link">
+                </a>
+            </div>
         </main>
     `
 

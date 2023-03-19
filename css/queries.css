@@ -105,6 +105,19 @@
     .about-title {
         margin-bottom: 2rem;
     }
+
+    .instagram-link-container {
+        padding-bottom: 4rem;
+    }
+
+    .instagram-logo--bottom {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .portfolio-container {
+        margin: 7.2rem auto 4rem auto;
+    }
 }
 
 /******************************************************/

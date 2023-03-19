@@ -279,7 +279,9 @@ html.is-animating .transition-fade {
 }
 
 .nav-link,
-.instagram-logo {
+.nav-link--bottom,
+.instagram-logo,
+.instagram-logo--bottom {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -292,7 +294,16 @@ html.is-animating .transition-fade {
     box-sizing: border-box;
 }
 
+.instagram-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 7.2rem;
+}
+
 .nav-link::after,
+.nav-link--bottom::after,
 .instagram-logo::after {
     content: "";
     position: absolute;
@@ -306,14 +317,23 @@ html.is-animating .transition-fade {
 
 .nav-link:hover::after,
 .nav-link:active::after,
+.nav-link--bottom:hover::after,
+.nav-link--bottom:active::after,
 .instagram-logo:hover::after,
-.instagram-logo:active::after {
+.instagram-logo:active::after,
+.instagram-logo--bottom:hover::after,
+.instagram-logo--bottom:active::after {
     width: 100%;
 }
 
 .instagram-logo {
     width: 1.6rem;
     height: 1.6rem;
+}
+
+.instagram-logo--bottom {
+    width: 3.2rem;
+    height: 3.2rem;
 }
 
 /* MOBILE BTN */
@@ -347,7 +367,6 @@ html.is-animating .transition-fade {
 .portfolio-container {
     max-width: 114.4rem;
     margin: 7.2rem auto;
-    margin-bottom: 12.8rem;
     padding: 0 2.8rem;
 }
 
